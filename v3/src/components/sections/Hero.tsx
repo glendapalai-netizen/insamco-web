@@ -27,7 +27,7 @@ export function Hero() {
           </h1>
           
           <p className="text-lg md:text-xl text-slate-300 mb-10 leading-relaxed max-w-2xl font-light">
-            Más de <strong className="text-white font-semibold">9 años</strong> suministrando dióxido de titanio, resinas, cargas minerales y aditivos a fabricantes de pinturas, plásticos y recubrimientos en Colombia y Venezuela.
+            Más de <strong className="text-white font-semibold">10 años</strong> suministrando dióxido de titanio, resinas, cargas minerales y aditivos a fabricantes de pinturas, plásticos y recubrimientos en Colombia y Venezuela.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4">

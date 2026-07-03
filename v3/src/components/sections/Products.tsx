@@ -1,4 +1,5 @@
-import { FlaskConical, Layers, Mountain, Droplet, Download } from 'lucide-react';
+import { useState } from 'react';
+import { FlaskConical, Layers, Mountain, Droplet, Download, X, ZoomIn } from 'lucide-react';
 import jsPDF from 'jspdf';
 import 'jspdf-autotable';
 
@@ -9,7 +10,7 @@ const products = [
     icon: <FlaskConical className="w-6 h-6" />,
     items: ["Doguide SR-2377", "Lomon Billions R-996", "Billions BLR-895"],
     description: "Pigmentos blancos de altísima pureza y poder cubriente.",
-    image: "/uploads/Factory_using_titanium_plastics_2K_202607030144.jpeg"
+    image: "/media/producto-1.jpg"
   },
   {
     id: "resinas",
@@ -17,7 +18,7 @@ const products = [
     icon: <Layers className="w-6 h-6" />,
     items: ["Acrílica Estirenada", "Vinil Acrílica", "Elastomérica"],
     description: "Vehículos base esenciales para formulaciones duraderas.",
-    image: "/uploads/Man_painting_mansion_with_engineers_202607030140.jpeg"
+    image: "/media/producto-2.jpg"
   },
   {
     id: "minerales",
@@ -25,7 +26,7 @@ const products = [
     icon: <Mountain className="w-6 h-6" />,
     items: ["Caolín", "Carbonato de Calcio"],
     description: "Optimizadores de propiedades mecánicas y de volumen.",
-    image: "https://images.unsplash.com/photo-1620021307135-24b901a0bc19?q=80&w=2070&auto=format&fit=crop"
+    image: "/media/producto-3.jpg"
   },
   {
     id: "aditivos",
@@ -33,11 +34,12 @@ const products = [
     icon: <Droplet className="w-6 h-6" />,
     items: ["Espesantes", "Dispersantes", "Antiespumantes"],
     description: "Ajuste fino para reología y estabilidad de aplicación.",
-    image: "https://images.unsplash.com/photo-1582715017084-21aa5c602a63?q=80&w=2070&auto=format&fit=crop"
+    image: "/media/producto-4.jpg"
   }
 ];
 
 export function Products() {
+  const [zoomed, setZoomed] = useState<{ src: string; alt: string } | null>(null);
 
   const handleDownloadCatalog = () => {
     const doc = new jsPDF();
@@ -129,15 +131,23 @@ export function Products() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {products.map((product) => (
             <div key={product.id} className="bg-white border border-slate-200 hover:border-insamco-blue transition-colors group rounded-sm overflow-hidden flex flex-col h-full shadow-sm hover:shadow-md">
-              <div className="h-48 overflow-hidden relative">
-                <div className="absolute inset-0 bg-insamco-blue/20 group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none"></div>
-                <img 
-                  src={product.image} 
-                  alt={product.category} 
-                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+              <button
+                type="button"
+                onClick={() => setZoomed({ src: product.image, alt: product.category })}
+                className="relative block w-full cursor-zoom-in group/img"
+                aria-label={`Ampliar ficha de ${product.category}`}
+              >
+                {/* Las fichas son infografías con texto: se muestran completas, sin recorte */}
+                <img
+                  src={product.image}
+                  alt={product.category}
+                  className="w-full h-auto block"
                   referrerPolicy="no-referrer"
                 />
-              </div>
+                <span className="absolute bottom-2 right-2 z-10 inline-flex items-center gap-1 rounded-sm bg-insamco-blue/80 px-2 py-1 text-[11px] font-semibold text-white opacity-0 group-hover/img:opacity-100 transition-opacity">
+                  <ZoomIn size={12} /> Ampliar
+                </span>
+              </button>
               <div className="p-6 flex flex-col flex-grow">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="text-insamco-gold">
@@ -159,6 +169,25 @@ export function Products() {
           ))}
         </div>
       </div>
+
+      {zoomed && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 p-4 cursor-zoom-out"
+          onClick={() => setZoomed(null)}
+          role="dialog"
+          aria-modal="true"
+        >
+          <button
+            type="button"
+            onClick={() => setZoomed(null)}
+            aria-label="Cerrar imagen ampliada"
+            className="absolute top-4 right-4 inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20"
+          >
+            <X size={22} />
+          </button>
+          <img src={zoomed.src} alt={zoomed.alt} className="max-h-full max-w-full object-contain" />
+        </div>
+      )}
     </section>
   );
 }

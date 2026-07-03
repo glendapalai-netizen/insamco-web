@@ -6,15 +6,15 @@ const services = [
     icon: <Lightbulb className="w-8 h-8 text-insamco-gold" />,
     title: "Asesoría para Nuevos Productos",
     description: "Orientación técnica especializada desde la conceptualización hasta el desarrollo de nuevas líneas en tu portafolio.",
-    image: "/uploads/CEO_talking_to_client_office_202607030023%20(1).jpeg",
-    imageAlt: "Laboratorio de investigación industrial moderno"
+    image: "/media/servicio-asesoria.jpg",
+    imageAlt: "Asesoría técnica y comercial de Grupo Insamco"
   },
   {
     id: "soporte",
     icon: <Wrench className="w-8 h-8 text-insamco-gold" />,
     title: "Soporte Técnico y Comercial",
     description: "Acompañamiento en la selección precisa de las materias primas más adecuadas para tus formulaciones actuales, asegurando calidad y rendimiento.",
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop",
+    image: "/media/servicio-soporte.jpg",
     imageAlt: "Ingeniera supervisando procesos industriales"
   },
   {
@@ -22,7 +22,7 @@ const services = [
     icon: <PackageSearch className="w-8 h-8 text-insamco-gold" />,
     title: "Coordinación Logística Integral",
     description: "Gestión completa de despachos oportunos, minimizando tiempos de espera y asegurando la integridad del material en toda la cadena de suministro.",
-    image: "https://images.unsplash.com/photo-1586528116311-ad8ed7c508b0?q=80&w=2070&auto=format&fit=crop",
+    image: "/media/servicio-logistica.jpg",
     imageAlt: "Almacén logístico de gran escala con montacargas"
   },
   {
@@ -30,7 +30,7 @@ const services = [
     icon: <Globe className="w-8 h-8 text-insamco-gold" />,
     title: "Suministro Global y Nacional",
     description: "Acceso a insumos importados de alta calidad desde los principales centros de manufactura y materias primas de producción nacional según tus requerimientos.",
-    image: "https://images.unsplash.com/photo-1494412519320-aa3da60ed812?q=80&w=2070&auto=format&fit=crop",
+    image: "/media/servicio-suministro.jpg",
     imageAlt: "Buque de carga y contenedores en puerto comercial"
   }
 ];
@@ -46,7 +46,7 @@ export function Services() {
           
           <div className="mt-10 mb-10 w-full aspect-video rounded-sm overflow-hidden shadow-2xl ring-1 ring-white/10 relative">
              <video 
-                src="/uploads/Men_closing_business_deal_4K_202607030114.mp4" 
+                src="/media/video-institucional.mp4" 
                 autoPlay 
                 loop 
                 muted 
