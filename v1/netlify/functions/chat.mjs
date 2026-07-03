@@ -64,7 +64,7 @@ export default async (req) => {
   if (!res.ok) {
     const detail = await res.text();
     console.error('Gemini error', res.status, detail);
-    return Response.json({ error: 'Error del modelo' }, { status: 502 });
+    return Response.json({ error: 'Error del modelo', debug_status: res.status, debug_detail: detail.slice(0, 300) }, { status: 502 });
   }
 
   const data = await res.json();
