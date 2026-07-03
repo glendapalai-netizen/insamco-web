@@ -28,7 +28,7 @@ export default async (req) => {
   if (req.method !== 'POST') {
     return Response.json({ error: 'Método no permitido' }, { status: 405 });
   }
-  const apiKey = process.env.GEMINI_API_KEY;
+  const apiKey = process.env.GEMINI_API_KEY || process.env.GEMINI;
   if (!apiKey) {
     return Response.json({ error: 'GEMINI_API_KEY no configurada' }, { status: 500 });
   }
@@ -49,7 +49,7 @@ export default async (req) => {
   }));
 
   const res = await fetch(
-    `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`,
+    `https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key=${apiKey}`,
     {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
