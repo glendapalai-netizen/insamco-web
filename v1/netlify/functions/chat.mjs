@@ -28,7 +28,7 @@ export default async (req) => {
   if (req.method !== 'POST') {
     return Response.json({ error: 'Método no permitido' }, { status: 405 });
   }
-  const apiKey = process.env.GEMINI_API_KEY || process.env.GEMINI;
+  const apiKey = process.env.GEMINI || process.env.GEMINI_API_KEY;
   if (!apiKey) {
     return Response.json({ error: 'GEMINI_API_KEY no configurada' }, { status: 500 });
   }
@@ -64,7 +64,7 @@ export default async (req) => {
   if (!res.ok) {
     const detail = await res.text();
     console.error('Gemini error', res.status, detail);
-    return Response.json({ error: 'Error del modelo', debug_status: res.status, debug_detail: detail.slice(0, 120), debug_key: { usada: apiKey.slice(0,6)+'...'+String(apiKey.length)+'chars', hay_GEMINI_API_KEY: !!process.env.GEMINI_API_KEY, hay_GEMINI: !!process.env.GEMINI } }, { status: 502 });
+    return Response.json({ error: 'Error del modelo' }, { status: 502 });
   }
 
   const data = await res.json();
