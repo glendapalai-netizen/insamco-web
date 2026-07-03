@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grupo Insamco S.A.S. — Aliado estratégico en materias primas industriales</title>
+<meta name="description" content="Grupo Insamco S.A.S. — Comercializador e importador de materias primas e insumos industriales para pinturas, plásticos y recubrimientos. Cúcuta, Colombia. Desde 2015.">
+<link rel="icon" type="image/png" href="https://api.moda.app/api/v2/images/ref/9d96aed9-1e10-478e-b02d-0e767c03eecc?v=b5c48168&amp;s=fb2327a28db889e41db3ce5bdfc0e786">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&amp;family=Open+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<style>
+  :root{
+    --navy:#1A365D;
+    --navy-deep:#0F2340;
+    --gold:#E2C144;
+    --gold-soft:#F0DA8A;
+    --light:#F7FAFC;
+    --ink:#0F1B2E;
+    --muted:#475569;
+  }
+  html{scroll-behavior:smooth;}
+  body{font-family:'Open Sans',system-ui,sans-serif;color:var(--ink);background:#fff;-webkit-font-smoothing:antialiased;}
+  h1,h2,h3,h4,.font-head{font-family:'Montserrat',system-ui,sans-serif;}
+  .eyebrow{letter-spacing:.18em;}
+  .hero-overlay{background:linear-gradient(115deg,rgba(15,35,64,.94) 0%,rgba(26,54,93,.86) 45%,rgba(26,54,93,.60) 100%);}
+  .gold-btn{background:var(--gold);color:#1A365D;box-shadow:0 8px 24px -8px rgba(226,193,68,.7);}
+  .gold-btn:hover{background:#EDD05B;transform:translateY(-2px);}
+  .card-hover{transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;}
+  .card-hover:hover{transform:translateY(-6px);box-shadow:0 24px 48px -24px rgba(15,27,46,.35);}
+  /* .reveal kept as a no-op hook: content is always fully visible (no hidden state,
+     so it renders correctly with or without JS/scroll). */
+  .reveal{opacity:1;}
+  .divider-gold{width:64px;height:4px;background:var(--gold);border-radius:99px;}
+  .nav-link{position:relative;}
+  .nav-link::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:2px;background:var(--gold);transition:width .25s ease;}
+  .nav-link:hover::after{width:100%;}
+  .mesh-navy{background:radial-gradient(circle at 15% 20%,rgba(226,193,68,.10),transparent 45%),radial-gradient(circle at 85% 80%,rgba(226,193,68,.08),transparent 40%),var(--navy);}
+  input,textarea,select{font-family:'Open Sans',sans-serif;}
+  .field{background:#fff;border:1px solid #cbd5e1;border-radius:.6rem;transition:border-color .2s,box-shadow .2s;}
+  .field:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(226,193,68,.25);}
+</style>
+</head>
+<body class="antialiased">
+
+<!-- ===== HEADER ===== -->
+<header id="top" class="fixed top-0 inset-x-0 z-50 bg-[#1A365D]/95 backdrop-blur-md border-b border-white/10 shadow-lg">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16 lg:h-20">
+      <a href="#top" class="flex items-center gap-3 shrink-0">
+        <img src="https://api.moda.app/api/v2/images/ref/9d96aed9-1e10-478e-b02d-0e767c03eecc?v=b5c48168&amp;s=fb2327a28db889e41db3ce5bdfc0e786" alt="Grupo Insamco S.A.S. logo" class="h-11 w-11 lg:h-12 lg:w-12 object-contain">
+        <span class="flex flex-col leading-none">
+          <span class="font-head font-extrabold text-white text-base lg:text-lg tracking-wide">GRUPO INSAMCO</span>
+          <span class="text-[var(--gold)] text-[10px] lg:text-[11px] tracking-[.35em] font-semibold mt-0.5">S.A.S.</span>
+        </span>
+      </a>
+      <nav class="hidden lg:flex items-center gap-8 text-sm font-semibold text-slate-100">
+        <a href="#servicios" class="nav-link">Servicios</a>
+        <a href="#productos" class="nav-link">Productos</a>
+        <a href="#aplicaciones" class="nav-link">Aplicaciones</a>
+        <a href="#nosotros" class="nav-link">Nosotros</a>
+        <a href="#contacto" class="nav-link">Contacto</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <a href="#cotizacion" class="gold-btn hidden sm:inline-flex items-center gap-2 font-head font-bold text-sm px-5 py-2.5 rounded-lg transition">
+          Solicitar Cotización
+        </a>
+        <button id="menuBtn" class="lg:hidden text-white p-2" aria-label="Abrir menú">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- mobile menu -->
+  <div id="mobileMenu" class="lg:hidden hidden bg-[#0F2340] border-t border-white/10">
+    <nav class="flex flex-col px-6 py-4 gap-1 text-slate-100 font-semibold">
+      <a href="#servicios" class="py-3 border-b border-white/5">Servicios</a>
+      <a href="#productos" class="py-3 border-b border-white/5">Productos</a>
+      <a href="#aplicaciones" class="py-3 border-b border-white/5">Aplicaciones</a>
+      <a href="#nosotros" class="py-3 border-b border-white/5">Nosotros</a>
+      <a href="#contacto" class="py-3 border-b border-white/5">Contacto</a>
+      <a href="#cotizacion" class="gold-btn text-center font-head font-bold mt-3 px-5 py-3 rounded-lg">Solicitar Cotización</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="relative min-h-screen flex items-center pt-16 lg:pt-20 overflow-hidden">
+  <img src="https://api.moda.app/api/v2/images/ref/1ac0eddc-66ea-4c83-a8bb-76a4f8ef4a9c?v=652371d6&amp;s=c423cc6488bb6630b04f044313656e1b" alt="Bodega de distribución de materias primas industriales" class="absolute inset-0 w-full h-full object-cover">
+  <div class="absolute inset-0 hero-overlay"></div>
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28 w-full">
+    <div class="max-w-3xl">
+      <span class="eyebrow inline-flex items-center gap-2 text-[var(--gold)] text-xs sm:text-sm font-bold uppercase mb-6 border border-[var(--gold)]/40 rounded-full px-4 py-1.5 bg-[var(--gold)]/10">
+        <span class="w-1.5 h-1.5 rounded-full bg-[var(--gold)]"></span>
+        Distribución B2B · Cúcuta, Colombia
+      </span>
+      <h1 class="font-head font-extrabold text-white text-4xl sm:text-5xl lg:text-6xl leading-[1.08] tracking-tight">
+        Tu <span class="text-[var(--gold)]">aliado estratégico</span> en materias primas para la industria
+      </h1>
+      <p class="mt-6 text-slate-200 text-lg sm:text-xl leading-relaxed max-w-2xl">
+        Más de <strong class="text-white">9 años</strong> suministrando dióxido de titanio, resinas, cargas minerales y aditivos a fabricantes de <strong class="text-white">pinturas, plásticos y recubrimientos</strong> en Colombia y Venezuela.
+      </p>
+      <div class="mt-9 flex flex-col sm:flex-row gap-4">
+        <a href="#cotizacion" class="gold-btn inline-flex justify-center items-center gap-2 font-head font-bold text-base px-8 py-4 rounded-lg transition">
+          Solicitar Cotización
+        </a>
+        <a href="#productos" class="inline-flex justify-center items-center gap-2 font-head font-bold text-base px-8 py-4 rounded-lg border-2 border-white/40 text-white hover:bg-white/10 transition">
+          Ver Productos
+        </a>
+      </div>
+      <div class="mt-12 flex flex-wrap gap-x-10 gap-y-4 text-white">
+        <div><div class="font-head font-extrabold text-3xl text-[var(--gold)]">+9</div><div class="text-sm text-slate-300">años en el mercado</div></div>
+        <div><div class="font-head font-extrabold text-3xl text-[var(--gold)]">28</div><div class="text-sm text-slate-300">referencias en catálogo</div></div>
+        <div><div class="font-head font-extrabold text-3xl text-[var(--gold)]">2</div><div class="text-sm text-slate-300">países atendidos</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BENEFICIOS ===== -->
+<section class="bg-[var(--light)] py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto reveal">
+      <span class="eyebrow text-[var(--navy)] text-sm font-bold uppercase">Por qué trabajar con nosotros</span>
+      <h2 class="font-head font-extrabold text-3xl sm:text-4xl text-[var(--navy)] mt-3">Garantizamos la continuidad de tu producción</h2>
+      <div class="divider-gold mx-auto mt-5"></div>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6 lg:gap-8 mt-14">
+      <div class="card-hover reveal bg-white rounded-2xl p-8 border border-slate-200">
+        <div class="w-14 h-14 rounded-xl bg-[var(--navy)] flex items-center justify-center mb-6">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#E2C144" stroke-width="2"><path d="M20 7L12 3 4 7m16 0l-8 4m8-4v10l-8 4m0-14L4 7m8 4v10M4 7v10l8 4"></path></svg>
+        </div>
+        <h3 class="font-head font-bold text-xl text-[var(--navy)]">Disponibilidad inmediata</h3>
+        <p class="mt-3 text-[var(--muted)] leading-relaxed">Stock recurrente de las referencias clave para que tu línea de producción nunca se detenga por falta de insumos.</p>
+      </div>
+      <div class="card-hover reveal bg-white rounded-2xl p-8 border border-slate-200" style="transition-delay:.08s">
+        <div class="w-14 h-14 rounded-xl bg-[var(--navy)] flex items-center justify-center mb-6">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#E2C144" stroke-width="2"><path d="M1 3h15v13H1zM16 8h4l3 3v5h-7V8z"></path><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+        </div>
+        <h3 class="font-head font-bold text-xl text-[var(--navy)]">Excelencia logística</h3>
+        <p class="mt-3 text-[var(--muted)] leading-relaxed">Procesos eficientes y entregas oportunas. Coordinamos cada despacho para cumplir con precisión tus tiempos operativos.</p>
+      </div>
+      <div class="card-hover reveal bg-white rounded-2xl p-8 border border-slate-200" style="transition-delay:.16s">
+        <div class="w-14 h-14 rounded-xl bg-[var(--navy)] flex items-center justify-center mb-6">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#E2C144" stroke-width="2"><path d="M9 11a4 4 0 100-8 4 4 0 000 8z"></path><path d="M17 11l2 2 4-4M2 21v-2a4 4 0 014-4h6a4 4 0 014 4v2"></path></svg>
+        </div>
+        <h3 class="font-head font-bold text-xl text-[var(--navy)]">Acompañamiento técnico</h3>
+        <p class="mt-3 text-[var(--muted)] leading-relaxed">Asesoría especializada en cada etapa: te ayudamos a seleccionar la materia prima adecuada y a optimizar tus formulaciones.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICIOS (destacada, fondo navy) ===== -->
+<section id="servicios" class="mesh-navy py-20 lg:py-28 scroll-mt-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div class="reveal">
+        <span class="eyebrow text-[var(--gold)] text-sm font-bold uppercase">Nuestro diferenciador</span>
+        <h2 class="font-head font-extrabold text-3xl sm:text-4xl lg:text-5xl text-white mt-3 leading-tight">Mucho más que un proveedor: <span class="text-[var(--gold)]">asesoría técnica que impulsa tu negocio</span></h2>
+        <div class="divider-gold mt-6"></div>
+        <p class="mt-6 text-slate-300 text-lg leading-relaxed">Acompañamos a nuestros clientes con conocimiento especializado en química de recubrimientos y plásticos. Nuestro equipo no solo entrega materiales: entrega soluciones.</p>
+        <img src="https://api.moda.app/api/v2/images/ref/abffdf51-ca01-48e8-8766-3c8271824e36?v=e6f56bd9&amp;s=30f70f37aa3b8bc966b103785a72a949" alt="Asesoría técnica y comercial de Grupo Insamco" class="mt-8 rounded-2xl w-full h-64 object-cover border border-white/10 shadow-2xl">
+      </div>
+      <div class="grid sm:grid-cols-2 gap-5">
+        <div class="card-hover reveal bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-7">
+          <div class="font-head font-extrabold text-[var(--gold)] text-2xl mb-3">01</div>
+          <h3 class="font-head font-bold text-lg text-white">Asesoría técnica especializada</h3>
+          <p class="mt-2 text-slate-300 text-sm leading-relaxed">Apoyo experto para el desarrollo de nuevos productos y la mejora de tus formulaciones existentes.</p>
+        </div>
+        <div class="card-hover reveal bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-7" style="transition-delay:.08s">
+          <div class="font-head font-extrabold text-[var(--gold)] text-2xl mb-3">02</div>
+          <h3 class="font-head font-bold text-lg text-white">Soporte técnico y comercial</h3>
+          <p class="mt-2 text-slate-300 text-sm leading-relaxed">Te acompañamos en la selección de las materias primas adecuadas para cada aplicación.</p>
+        </div>
+        <div class="card-hover reveal bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-7" style="transition-delay:.16s">
+          <div class="font-head font-extrabold text-[var(--gold)] text-2xl mb-3">03</div>
+          <h3 class="font-head font-bold text-lg text-white">Coordinación logística integral</h3>
+          <p class="mt-2 text-slate-300 text-sm leading-relaxed">Gestionamos despachos oportunos y confiables para asegurar la continuidad de tu operación.</p>
+        </div>
+        <div class="card-hover reveal bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-7" style="transition-delay:.24s">
+          <div class="font-head font-extrabold text-[var(--gold)] text-2xl mb-3">04</div>
+          <h3 class="font-head font-bold text-lg text-white">Suministro nacional e importado</h3>
+          <p class="mt-2 text-slate-300 text-sm leading-relaxed">Insumos de producción nacional e importados, con respaldo de marcas líderes a nivel mundial.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRODUCTOS ===== -->
+<section id="productos" class="bg-[var(--light)] py-20 lg:py-28 scroll-mt-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 reveal">
+      <div class="max-w-2xl">
+        <span class="eyebrow text-[var(--navy)] text-sm font-bold uppercase">Catálogo</span>
+        <h2 class="font-head font-extrabold text-3xl sm:text-4xl text-[var(--navy)] mt-3">Productos destacados</h2>
+        <div class="divider-gold mt-5"></div>
+      </div>
+      <div class="flex gap-3">
+        <span class="inline-flex items-center gap-2 bg-white border border-slate-200 rounded-full px-4 py-2 text-sm font-semibold text-[var(--navy)]">22 referencias base agua</span>
+        <span class="inline-flex items-center gap-2 bg-white border border-slate-200 rounded-full px-4 py-2 text-sm font-semibold text-[var(--navy)]">6 base solvente</span>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-14">
+      <div class="card-hover reveal bg-white rounded-2xl overflow-hidden border border-slate-200">
+        <div class="h-40 bg-[var(--navy)] relative overflow-hidden">
+          <img src="https://api.moda.app/api/v2/images/ref/ee27dd75-a052-43a6-90cb-be5a94618916?v=85a8fb57&amp;s=245d04c5aa1f38e9ced9182decd1ebfd" alt="Dióxido de titanio y pigmentos" class="w-full h-full object-cover opacity-90">
+        </div>
+        <div class="p-6">
+          <h3 class="font-head font-bold text-lg text-[var(--navy)]">Dióxido de Titanio</h3>
+          <p class="mt-2 text-sm text-[var(--muted)] leading-relaxed">Alto poder de opacidad y blancura para recubrimientos de máxima calidad.</p>
+          <ul class="mt-3 space-y-1.5 text-sm text-[var(--navy)] font-medium">
+            <li class="flex gap-2"><span class="text-[var(--gold)]">›</span> Doguide SR-2377</li>
+            <li class="flex gap-2"><span class="text-[var(--gold)]">›</span> Lomon Billions R-996</li>
+            <li class="flex gap-2"><span class="text-[var(--gold)]">›</span> Billions BLR-895</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card-hover reveal bg-white rounded-2xl overflow-hidden border border-slate-200" style="transition-delay:.08s">
+        <div class="h-40 bg-[var(--navy)] relative overflow-hidden">
+          <img src="https://api.moda.app/api/v2/images/ref/a1d2eb61-3e43-4d18-b2d8-184bc0d6d35f?v=db20b805&s=b547802ff8d254ec64f7854d276b47ed" alt="Resinas y ligantes para pinturas" class="w-full h-full object-cover opacity-90">
+        </div>
+        <div class="p-6">
+          <h3 class="font-head font-bold text-lg text-[var(--navy)]">Resinas</h3>
+          <p class="mt-2 text-sm text-[var(--muted)] leading-relaxed">Ligantes para múltiples sistemas de pintura y recubrimiento.</p>
+          <ul class="mt-3 space-y-1.5 text-sm text-[var(--navy)] font-medium">
+            <li class="flex gap-2"><span class="text-[var(--gold)]">›</span> Acrílica estirenada</li>
+            <li class="flex gap-2"><span class="text-[var(--gold)]">›</span> Vinil acrílica</li>
+            <li class="flex gap-2"><span class="text-[var(--gold)]">›</span> Elastomérica</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card-hover reveal bg-white rounded-2xl overflow-hidden border border-slate-200" style="transition-delay:.16s">
+        <div class="h-40 bg-[var(--navy)] relative overflow-hidden">
+          <img src="https://api.moda.app/api/v2/images/ref/05bc4a29-bd5b-4496-94e9-4f6827672563?v=6547a678&s=7c3363f17dec6587932521285686521d" alt="Cargas minerales: caolín y carbonato de calcio" class="w-full h-full object-cover opacity-90">
+        </div>
+        <div class="p-6">
+          <h3 class="font-head font-bold text-lg text-[var(--navy)]">Cargas minerales</h3>
+          <p class="mt-2 text-sm text-[var(--muted)] leading-relaxed">Cargas funcionales que optimizan costos y propiedades del producto final.</p>
+          <ul class="mt-3 space-y-1.5 text-sm text-[var(--navy)] font-medium">
+            <li class="flex gap-2"><span class="text-[var(--gold)]">›</span> Caolín</li>
+            <li class="flex gap-2"><span class="text-[var(--gold)]">›</span> Carbonato de calcio</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card-hover reveal bg-white rounded-2xl overflow-hidden border border-slate-200" style="transition-delay:.24s">
+        <div class="h-40 bg-[var(--navy)] relative overflow-hidden">
+          <img src="https://api.moda.app/api/v2/images/ref/fe3d9ae2-5521-4b3a-8fff-cb36699b0ede?v=80b389bb&s=388e856abc9f91c177de23297cf05e0f" alt="Espesantes y aditivos químicos" class="w-full h-full object-cover opacity-90">
+        </div>
+        <div class="p-6">
+          <h3 class="font-head font-bold text-lg text-[var(--navy)]">Espesantes y Aditivos</h3>
+          <p class="mt-2 text-sm text-[var(--muted)] leading-relaxed">Reología, dispersión y desempeño: aditivos que perfeccionan cada formulación.</p>
+          <ul class="mt-3 space-y-1.5 text-sm text-[var(--navy)] font-medium">
+            <li class="flex gap-2"><span class="text-[var(--gold)]">›</span> Espesantes</li>
+            <li class="flex gap-2"><span class="text-[var(--gold)]">›</span> Aditivos especiales</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== APLICACIONES ===== -->
+<section id="aplicaciones" class="bg-white py-20 lg:py-28 scroll-mt-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto reveal">
+      <span class="eyebrow text-[var(--navy)] text-sm font-bold uppercase">Dónde se usan</span>
+      <h2 class="font-head font-extrabold text-3xl sm:text-4xl text-[var(--navy)] mt-3">Aplicaciones industriales</h2>
+      <div class="divider-gold mx-auto mt-5"></div>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-14">
+      <div class="reveal group relative rounded-2xl overflow-hidden border border-slate-200 bg-white card-hover">
+        <div class="h-44 overflow-hidden">
+          <img src="https://api.moda.app/api/v2/images/ref/da1e2d98-446b-4e64-9414-b07dea32daae?v=76efc4e9&s=ef5fdaaf786da37fa67800af81f81a39" alt="Pintura arquitectónica" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+        </div>
+        <div class="p-6">
+          <h3 class="font-head font-bold text-lg text-[var(--navy)]">Pintura arquitectónica</h3>
+          <p class="mt-2 text-sm text-[var(--muted)]">Insumos para pinturas decorativas de interior y exterior.</p>
+        </div>
+      </div>
+      <div class="reveal group relative rounded-2xl overflow-hidden border border-slate-200 bg-white card-hover" style="transition-delay:.08s">
+        <div class="h-44 overflow-hidden">
+          <img src="https://api.moda.app/api/v2/images/ref/dd21da5a-930a-4f69-b2b1-8a6cb58187c2?v=e3547cb4&s=1a5b39ba13e7bbeedf1e50dca8443e52" alt="Plásticos y masterbatch" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+        </div>
+        <div class="p-6">
+          <h3 class="font-head font-bold text-lg text-[var(--navy)]">Plásticos y masterbatch</h3>
+          <p class="mt-2 text-sm text-[var(--muted)]">Pigmentos y cargas para transformación plástica.</p>
+        </div>
+      </div>
+      <div class="reveal group relative rounded-2xl overflow-hidden border border-slate-200 bg-white card-hover" style="transition-delay:.16s">
+        <div class="h-44 overflow-hidden">
+          <img src="https://api.moda.app/api/v2/images/ref/f57e89b0-7035-4511-8d38-5287f31090e6?v=502863af&s=4e2aee39be537e0acd908c307e1c6588" alt="Recubrimientos automotrices" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+        </div>
+        <div class="p-6">
+          <h3 class="font-head font-bold text-lg text-[var(--navy)]">Automotriz</h3>
+          <p class="mt-2 text-sm text-[var(--muted)]">Materias primas para recubrimientos del sector automotor.</p>
+        </div>
+      </div>
+      <div class="reveal group relative rounded-2xl overflow-hidden border border-slate-200 bg-white card-hover" style="transition-delay:.24s">
+        <div class="h-44 overflow-hidden">
+          <img src="https://api.moda.app/api/v2/images/ref/042f6bab-0154-403d-885c-579fd3cdce54?v=ffcfa17a&s=b2273dc9b0ae5f4a968eb0625a2c2997" alt="Recubrimientos industriales protectores" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+        </div>
+        <div class="p-6">
+          <h3 class="font-head font-bold text-lg text-[var(--navy)]">Recubrimientos</h3>
+          <p class="mt-2 text-sm text-[var(--muted)]">Soluciones para recubrimientos protectores e industriales.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTORES + COBERTURA (navy) ===== -->
+<section class="bg-[var(--navy)] py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 lg:gap-16">
+    <div class="reveal">
+      <span class="eyebrow text-[var(--gold)] text-sm font-bold uppercase">A quién servimos</span>
+      <h2 class="font-head font-extrabold text-3xl sm:text-4xl text-white mt-3">Sectores atendidos</h2>
+      <div class="divider-gold mt-5"></div>
+      <div class="mt-8 space-y-5">
+        <div class="flex gap-4 bg-white/5 border border-white/10 rounded-xl p-6">
+          <div class="w-12 h-12 rounded-lg bg-[var(--gold)] flex items-center justify-center shrink-0">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1A365D" stroke-width="2"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-4h6v4"></path></svg>
+          </div>
+          <div>
+            <h3 class="font-head font-bold text-lg text-white">Sector Privado</h3>
+            <p class="mt-1 text-slate-300 text-sm">Industria en general: fabricantes de pinturas, plásticos y recubrimientos.</p>
+          </div>
+        </div>
+        <div class="flex gap-4 bg-white/5 border border-white/10 rounded-xl p-6">
+          <div class="w-12 h-12 rounded-lg bg-[var(--gold)] flex items-center justify-center shrink-0">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1A365D" stroke-width="2"><path d="M3 21h18M4 21V10l8-6 8 6v11M9 21v-6h6v6"></path><path d="M12 4v3"></path></svg>
+          </div>
+          <div>
+            <h3 class="font-head font-bold text-lg text-white">Sector Público</h3>
+            <p class="mt-1 text-slate-300 text-sm">Alcaldías y gobernaciones, atendidos mediante nuestra red de aliados comerciales.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="reveal">
+      <span class="eyebrow text-[var(--gold)] text-sm font-bold uppercase">Dónde operamos</span>
+      <h2 class="font-head font-extrabold text-3xl sm:text-4xl text-white mt-3">Cobertura geográfica</h2>
+      <div class="divider-gold mt-5"></div>
+      <div class="mt-8 space-y-5">
+        <div class="bg-white/5 border border-white/10 rounded-xl p-6">
+          <div class="flex items-center justify-between">
+            <h3 class="font-head font-bold text-lg text-white flex items-center gap-2">🇨🇴 Colombia</h3>
+            <span class="text-xs font-bold uppercase tracking-wider text-[var(--navy)] bg-[var(--gold)] rounded-full px-3 py-1">Consolidado</span>
+          </div>
+          <p class="mt-2 text-slate-300 text-sm">Operación consolidada en el mercado colombiano, con base en Cúcuta, Norte de Santander.</p>
+        </div>
+        <div class="bg-white/5 border border-white/10 rounded-xl p-6">
+          <div class="flex items-center justify-between">
+            <h3 class="font-head font-bold text-lg text-white flex items-center gap-2">🇻🇪 Venezuela</h3>
+            <span class="text-xs font-bold uppercase tracking-wider text-white border border-[var(--gold)]/50 rounded-full px-3 py-1">En expansión</span>
+          </div>
+          <p class="mt-2 text-slate-300 text-sm">Expansión internacional en marcha para atender la creciente demanda industrial venezolana.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== NOSOTROS ===== -->
+<section id="nosotros" class="bg-[var(--light)] py-20 lg:py-28 scroll-mt-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+    <div class="reveal">
+      <span class="eyebrow text-[var(--navy)] text-sm font-bold uppercase">Quiénes somos</span>
+      <h2 class="font-head font-extrabold text-3xl sm:text-4xl text-[var(--navy)] mt-3">Una filosofía de éxito compartido</h2>
+      <div class="divider-gold mt-5"></div>
+      <p class="mt-6 text-[var(--muted)] text-lg leading-relaxed">Somos un aliado estratégico basado en <strong class="text-[var(--navy)]">confianza, compromiso y transparencia</strong>. Acompañamos a las empresas desde sus etapas iniciales hasta su consolidación, porque tu crecimiento es también el nuestro.</p>
+      <p class="mt-4 text-[var(--muted)] text-lg leading-relaxed">Miramos al futuro con una <strong class="text-[var(--navy)]">visión de innovación sostenible</strong>, desarrollando soluciones amigables con el medio ambiente y aspirando a consolidarnos como referente latinoamericano en el suministro de materias primas.</p>
+      <div class="mt-8 grid sm:grid-cols-3 gap-4">
+        <div class="bg-white rounded-xl border border-slate-200 p-5 text-center"><div class="font-head font-extrabold text-[var(--navy)] text-lg" style="font-size: 15px;">Confianza</div></div>
+        <div class="bg-white rounded-xl border border-slate-200 p-5 text-center"><div class="font-head font-extrabold text-[var(--navy)] text-lg" style="font-size: 15px;">Compromiso</div></div>
+        <div class="bg-white rounded-xl border border-slate-200 p-5 text-center"><div class="font-head font-extrabold text-[var(--navy)] text-lg" style="font-size: 15px;">Transparencia</div></div>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+        <img src="https://api.moda.app/api/v2/images/ref/4db3d3dd-53fa-4805-9b75-a409aaa25af9?v=3bbd0b2d&amp;s=8bb5e9b8f4c4aad71415d1504a8755fe" alt="Equipo técnico de Grupo Insamco" class="w-full h-[26rem] object-cover">
+        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-[var(--navy)] to-transparent p-6">
+          <p class="text-white font-head font-bold text-lg">Aliados de tu operación, desde 2015.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== COTIZACIÓN + CONTACTO ===== -->
+<section id="cotizacion" class="mesh-navy py-20 lg:py-28 scroll-mt-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-32" id="contacto">
+    <div class="grid lg:grid-cols-5 gap-10 lg:gap-14">
+      <!-- Info -->
+      <div class="lg:col-span-2 reveal">
+        <span class="eyebrow text-[var(--gold)] text-sm font-bold uppercase">Hablemos</span>
+        <h2 class="font-head font-extrabold text-3xl sm:text-4xl text-white mt-3">Solicita tu cotización</h2>
+        <div class="divider-gold mt-5"></div>
+        <p class="mt-6 text-slate-300 leading-relaxed">Cuéntanos qué necesitas y un asesor te contactará con la mejor propuesta para tu operación.</p>
+        <div class="mt-8 space-y-5 text-slate-200">
+          <div class="flex gap-4">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E2C144" stroke-width="2" class="shrink-0 mt-0.5"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0118 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <div><div class="font-semibold text-white">Sede Cúcuta</div><div class="text-sm text-slate-300">Avenida 7A # 19 N-50, Parque Industrial del Oriente, Bloque 2, Bodegas 1-3. Norte de Santander, Colombia.</div></div>
+          </div>
+          <a href="https://wa.me/573507174992" target="_blank" rel="noopener" class="flex gap-4 group">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="#E2C144" class="shrink-0 mt-0.5"><path d="M12 2a10 10 0 00-8.5 15.2L2 22l4.9-1.4A10 10 0 1012 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.6-.6-2.7-1.2-4.5-4-4.6-4.2-.1-.2-1.1-1.4-1.1-2.7 0-1.3.7-1.9.9-2.2.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5.2.5.7 1.8.8 1.9.1.1.1.3 0 .5-.1.2-.2.4-.3.5l-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.2.1 1.5.7 1.7.8.2.1.4.2.4.3.1.1.1.6-.1 1.1z"></path></svg>
+            <div><div class="font-semibold text-white group-hover:text-[var(--gold)] transition">WhatsApp</div><div class="text-sm text-slate-300">+57 350 717 4992</div></div>
+          </a>
+          <div class="flex gap-4">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E2C144" stroke-width="2" class="shrink-0 mt-0.5"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 6-10 7L2 6"></path></svg>
+            <div>
+              <div class="font-semibold text-white">Correos</div>
+              <a href="mailto:sergio@grupoinsamco.com" class="block text-sm text-slate-300 hover:text-[var(--gold)]">sergio@grupoinsamco.com</a>
+              <a href="mailto:andreaosorio@grupoinsamco.com" class="block text-sm text-slate-300 hover:text-[var(--gold)]">andreaosorio@grupoinsamco.com</a>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E2C144" stroke-width="2" class="shrink-0 mt-0.5"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
+            <div><div class="font-semibold text-white">Horario de atención</div><div class="text-sm text-slate-300">Lunes a viernes · 8:00–12:00 y 14:00–17:00</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div class="lg:col-span-3 reveal">
+        <div class="bg-white rounded-2xl p-6 sm:p-8 lg:p-10 shadow-2xl">
+          <form id="lead-form" class="grid sm:grid-cols-2 gap-5">
+            <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+            <input type="hidden" name="source" value="website">
+            <input type="hidden" name="subject" value="Nueva solicitud de cotización — grupoinsamco.com">
+            <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none">
+
+            <div>
+              <label class="block text-sm font-semibold text-[var(--navy)] mb-1.5">Empresa *</label>
+              <input required="" name="empresa" type="text" class="field w-full px-4 py-3" placeholder="Nombre de tu empresa">
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-[var(--navy)] mb-1.5">Nombre *</label>
+              <input required="" name="name" type="text" class="field w-full px-4 py-3" placeholder="Tu nombre completo">
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-[var(--navy)] mb-1.5">Correo *</label>
+              <input required="" name="email" type="email" class="field w-full px-4 py-3" placeholder="correo@empresa.com">
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-[var(--navy)] mb-1.5">Teléfono</label>
+              <input name="telefono" type="tel" class="field w-full px-4 py-3" placeholder="+57 300 000 0000">
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-[var(--navy)] mb-1.5">País</label>
+              <select name="pais" class="field w-full px-4 py-3 bg-white">
+                <option>Colombia</option>
+                <option>Venezuela</option>
+                <option>Otro</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-[var(--navy)] mb-1.5">Producto de interés</label>
+              <select name="producto" class="field w-full px-4 py-3 bg-white">
+                <option>Dióxido de Titanio</option>
+                <option>Resinas</option>
+                <option>Cargas minerales</option>
+                <option>Espesantes y Aditivos</option>
+                <option>Varios / No estoy seguro</option>
+              </select>
+            </div>
+            <div class="sm:col-span-2">
+              <label class="block text-sm font-semibold text-[var(--navy)] mb-1.5">Requerimientos</label>
+              <textarea name="requerimientos" rows="4" class="field w-full px-4 py-3" placeholder="Describe volúmenes, especificaciones o necesidades técnicas..."></textarea>
+            </div>
+            <div class="sm:col-span-2">
+              <button type="submit" class="gold-btn w-full sm:w-auto inline-flex justify-center items-center gap-2 font-head font-bold text-base px-8 py-4 rounded-lg transition">
+                Enviar Solicitud de Cotización
+              </button>
+            </div>
+          </form>
+          <div id="lead-form-success" hidden="" class="text-center py-12">
+            <div class="w-16 h-16 mx-auto rounded-full bg-green-100 flex items-center justify-center mb-4">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5"><path d="M20 6L9 17l-5-5"></path></svg>
+            </div>
+            <h3 class="font-head font-bold text-xl text-[var(--navy)]">¡Solicitud enviada!</h3>
+            <p class="mt-2 text-[var(--muted)]">Gracias por contactarnos. Un asesor de Grupo Insamco te responderá muy pronto.</p>
+          </div>
+          <p id="lead-form-error" hidden="" class="mt-4 text-sm text-red-600 text-center">No pudimos enviar tu solicitud. Escríbenos por WhatsApp al +57 350 717 4992.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="bg-[var(--navy-deep)] text-slate-300 pt-16 pb-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid md:grid-cols-3 gap-10">
+      <div>
+        <div class="flex items-center gap-3">
+          <img src="https://api.moda.app/api/v2/images/ref/9d96aed9-1e10-478e-b02d-0e767c03eecc?v=b5c48168&amp;s=fb2327a28db889e41db3ce5bdfc0e786" alt="Grupo Insamco S.A.S." class="h-14 w-14 object-contain">
+          <div>
+            <div class="font-head font-extrabold text-white text-lg tracking-wide">GRUPO INSAMCO S.A.S.</div>
+            <div class="text-[var(--gold)] text-sm tracking-[.25em] font-semibold">— desde 2015 —</div>
+          </div>
+        </div>
+        <p class="mt-5 text-sm leading-relaxed max-w-xs">Comercializador e importador de materias primas e insumos industriales para pinturas, plásticos y recubrimientos.</p>
+      </div>
+      <div>
+        <h4 class="font-head font-bold text-white uppercase text-sm tracking-wider mb-4">Navegación</h4>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="#servicios" class="hover:text-[var(--gold)] transition">Servicios</a></li>
+          <li><a href="#productos" class="hover:text-[var(--gold)] transition">Productos</a></li>
+          <li><a href="#aplicaciones" class="hover:text-[var(--gold)] transition">Aplicaciones</a></li>
+          <li><a href="#nosotros" class="hover:text-[var(--gold)] transition">Nosotros</a></li>
+          <li><a href="#cotizacion" class="hover:text-[var(--gold)] transition">Solicitar Cotización</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-head font-bold text-white uppercase text-sm tracking-wider mb-4">Contacto</h4>
+        <ul class="space-y-2.5 text-sm">
+          <li>Av. 7A # 19 N-50, Parque Industrial del Oriente, Cúcuta, Colombia</li>
+          <li><a href="https://wa.me/573507174992" target="_blank" rel="noopener" class="hover:text-[var(--gold)] transition">WhatsApp: +57 350 717 4992</a></li>
+          <li><a href="mailto:sergio@grupoinsamco.com" class="hover:text-[var(--gold)] transition">sergio@grupoinsamco.com</a></li>
+          <li>Lun–Vie · 8:00–12:00 / 14:00–17:00</li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-white/10 mt-12 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-slate-400">
+      <p>© <span id="year"></span> Grupo Insamco S.A.S. Todos los derechos reservados.</p>
+      <p>Cúcuta, Norte de Santander · Colombia 🇨🇴 · Venezuela 🇻🇪</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/573507174992" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp" class="fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-[#25D366] shadow-xl flex items-center justify-center hover:scale-110 transition">
+  <svg width="30" height="30" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 00-8.5 15.2L2 22l4.9-1.4A10 10 0 1012 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.6-.6-2.7-1.2-4.5-4-4.6-4.2-.1-.2-1.1-1.4-1.1-2.7 0-1.3.7-1.9.9-2.2.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5.2.5.7 1.8.8 1.9.1.1.1.3 0 .5-.1.2-.2.4-.3.5l-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.2.1 1.5.7 1.7.8.2.1.4.2.4.3.1.1.1.6-.1 1.1z"></path></svg>
+</a>
+
+<script>
+  // year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // mobile menu
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+  // form submit -> Web3Forms
+  const leadForm = document.getElementById('lead-form');
+  leadForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    document.getElementById('lead-form-error').hidden = true;
+    const btn = leadForm.querySelector('button[type=submit]');
+    const orig = btn.textContent; btn.textContent = 'Enviando...'; btn.disabled = true;
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: new FormData(leadForm) });
+      const json = await res.json().catch(() => ({}));
+      if (json.success) {
+        leadForm.hidden = true;
+        document.getElementById('lead-form-success').hidden = false;
+      } else {
+        document.getElementById('lead-form-error').hidden = false;
+        btn.textContent = orig; btn.disabled = false;
+      }
+    } catch (err) {
+      document.getElementById('lead-form-error').hidden = false;
+      btn.textContent = orig; btn.disabled = false;
+    }
+  });
+</script>
+
+</body></html>
