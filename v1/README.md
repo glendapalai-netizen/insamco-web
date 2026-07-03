@@ -45,10 +45,8 @@ empresa (productos, horarios, contacto).
 
 ## Pendientes
 
-- [ ] **Imágenes:** todas las imágenes apuntan a `api.moda.app` (servidor temporal de la
-  herramienta de prototipos). Hay que descargarlas, guardarlas en una carpeta `img/` y
-  actualizar las rutas en `index.html` antes de que esos enlaces caduquen.
-- [ ] Configurar `GEMINI_API_KEY` en Netlify para activar el chatbot.
+- [x] Imágenes descargadas a `img/` y optimizadas (hecho el 3-jul-2026).
+- [x] Chatbot activo con la variable `GEMINI` en Netlify.
 - [ ] Conectar el dominio `grupoinsamco.com` cuando esté listo.
 
 ## Para regenerar el CSS de Tailwind
