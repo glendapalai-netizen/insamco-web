@@ -1,0 +1,8 @@
+# Netlify publica la versión activa del sitio.
+# Cuando cambiemos de versión, solo hay que actualizar estas dos rutas.
+
+[build]
+  publish = "v1"
+
+[functions]
+  directory = "v1/netlify/functions"
