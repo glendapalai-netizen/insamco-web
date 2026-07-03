@@ -1,0 +1,8 @@
+{
+  "name": "Grupo Insamco S.A.S.",
+  "description": "Landing page corporativa para Grupo Insamco S.A.S., comercializador B2B de materias primas industriales.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
