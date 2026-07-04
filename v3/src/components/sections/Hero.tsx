@@ -3,16 +3,26 @@ import { ArrowRight } from 'lucide-react';
 export function Hero() {
   return (
     <section id="inicio" className="relative bg-insamco-blue pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-      {/* Background pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <svg className="h-full w-full" xmlns="http://www.apache.org/2000/svg">
-          <defs>
-            <pattern id="grid-pattern" width="40" height="40" patternUnits="userSpaceOnUse">
-              <path d="M0 40L40 0H20L0 20M40 40V20L20 40" stroke="#ffffff" strokeWidth="1" fill="none" />
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#grid-pattern)" />
-        </svg>
+      {/* Video de introducción: horizontal en pantallas grandes, vertical en móvil */}
+      <div className="absolute inset-0">
+        <video
+          src="/media/intro-horizontal.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="hidden md:block w-full h-full object-cover"
+        />
+        <video
+          src="/media/intro-vertical.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="block md:hidden w-full h-full object-cover"
+        />
+        {/* Velo azul para que el texto siga siendo legible sobre el video */}
+        <div className="absolute inset-0 bg-gradient-to-r from-insamco-blue/95 via-insamco-blue/80 to-insamco-blue/50"></div>
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

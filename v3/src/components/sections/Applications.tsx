@@ -2,10 +2,10 @@ import { PaintBucket, Box, Car, PaintRoller } from 'lucide-react';
 
 export function Applications() {
   const applications = [
-    { name: "Pintura Arquitectónica", icon: <PaintRoller className="w-8 h-8" /> },
-    { name: "Plásticos y Masterbatch", icon: <Box className="w-8 h-8" /> },
-    { name: "Sector Automotriz", icon: <Car className="w-8 h-8" /> },
-    { name: "Recubrimientos Especiales", icon: <PaintBucket className="w-8 h-8" /> }
+    { name: "Pintura Arquitectónica", icon: <PaintRoller className="w-8 h-8" />, image: "/media/aplicacion-arquitectonica.jpg" },
+    { name: "Plásticos y Masterbatch", icon: <Box className="w-8 h-8" />, image: "/media/aplicacion-plasticos.jpg" },
+    { name: "Sector Automotriz", icon: <Car className="w-8 h-8" />, image: "/media/aplicacion-automotriz.jpg" },
+    { name: "Recubrimientos Especiales", icon: <PaintBucket className="w-8 h-8" />, image: "/media/aplicacion-recubrimientos.jpg" }
   ];
 
   return (
@@ -37,11 +37,17 @@ export function Applications() {
 
           <div className="grid grid-cols-2 gap-4">
             {applications.map((app, idx) => (
-              <div key={idx} className="aspect-square bg-[#152a4a] border border-white/5 p-6 flex flex-col items-center justify-center text-center gap-4 hover:bg-[#1a3257] hover:border-insamco-gold/30 transition-all rounded-sm group">
-                <div className="text-insamco-gold group-hover:scale-110 transition-transform">
-                  {app.icon}
+              <div key={idx} className="relative aspect-square overflow-hidden border border-white/5 hover:border-insamco-gold/40 transition-all rounded-sm group">
+                <img
+                  src={app.image}
+                  alt={app.name}
+                  className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-insamco-blue/95 via-insamco-blue/30 to-transparent"></div>
+                <div className="absolute inset-x-0 bottom-0 p-4 flex items-center gap-3">
+                  <div className="text-insamco-gold shrink-0">{app.icon}</div>
+                  <h4 className="font-semibold text-white leading-snug">{app.name}</h4>
                 </div>
-                <h4 className="font-semibold text-slate-200">{app.name}</h4>
               </div>
             ))}
           </div>
