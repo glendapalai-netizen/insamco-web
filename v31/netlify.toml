@@ -1,0 +1,11 @@
+# Configuración de la V3 en Netlify (el sitio usa "base = v3", así que lee este archivo).
+[build]
+  command = "npm install && npx vite build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
