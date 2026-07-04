@@ -9,10 +9,12 @@ import { About } from './components/sections/About';
 import { Testimonials } from './components/sections/Testimonials';
 import { Contact } from './components/sections/Contact';
 import { Chatbot } from './components/ui/Chatbot';
+import { MobileIntro } from './components/ui/MobileIntro';
 
 export default function App() {
   return (
     <div className="min-h-screen flex flex-col font-sans">
+      <MobileIntro />
       <Navbar />
       <main className="flex-grow">
         <Hero />
