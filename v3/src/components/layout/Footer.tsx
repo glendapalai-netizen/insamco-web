@@ -1,20 +1,23 @@
-import { Logo } from '../ui/Logo';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 
 export function Footer() {
   return (
     <footer className="bg-[#0f213a] text-slate-300 pt-16 pb-8 border-t border-slate-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 mb-12 items-center">
           
-          <div className="space-y-6">
-            <Logo className="text-white brightness-200 contrast-125 grayscale-0" />
-            <p className="text-sm leading-relaxed text-slate-400">
+          <div className="lg:col-span-2 space-y-6">
+            <img
+              src="/media/logo-3d.jpg"
+              alt="Grupo Insamco S.A.S. — desde 2015"
+              className="w-full max-w-md rounded-sm shadow-2xl ring-1 ring-insamco-gold/20"
+            />
+            <p className="text-sm leading-relaxed text-slate-400 max-w-md">
               Aliado estratégico en materias primas e insumos industriales para los sectores de plásticos, pinturas y recubrimientos en Colombia y Venezuela.
             </p>
           </div>
 
-          <div>
+          <div className="lg:col-span-1">
             <h4 className="text-white font-display font-semibold uppercase tracking-wider mb-6">Enlaces Rápidos</h4>
             <ul className="space-y-3">
               {['Servicios', 'Productos', 'Aplicaciones', 'Nosotros'].map(link => (

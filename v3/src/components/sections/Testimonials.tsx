@@ -51,7 +51,7 @@ export function Testimonials() {
     <section id="testimonios" className="py-24 bg-insamco-blue text-white relative overflow-hidden">
       {/* Elementos decorativos */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-10 pointer-events-none">
-        <div className="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-white blur-3xl"></div>
+        <div className="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-insamco-gold blur-3xl opacity-40"></div>
         <div className="absolute bottom-0 right-0 w-1/2 h-1/2 rounded-full bg-insamco-gold blur-3xl opacity-20"></div>
       </div>
 
@@ -59,7 +59,7 @@ export function Testimonials() {
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
           <div className="max-w-2xl">
             <h2 className="text-sm font-bold tracking-widest uppercase text-insamco-gold mb-3">Casos de Éxito</h2>
-            <h3 className="text-3xl md:text-4xl font-bold mb-4">Lo que dicen nuestros clientes</h3>
+            <h3 className="text-3xl md:text-4xl font-bold mb-4 text-white drop-shadow-[0_2px_8px_rgba(8,26,51,0.8)]">Lo que dicen nuestros clientes</h3>
             <p className="text-slate-300 text-lg font-light">
               Resultados reales de empresas que han asegurado su <strong className="text-white font-semibold">continuidad operativa</strong> gracias a nuestra gestión estratégica e inventario garantizado.
             </p>

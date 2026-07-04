@@ -1,10 +1,12 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { Volume2, VolumeX } from 'lucide-react';
 
 const SEEN_KEY = 'insamco_intro_vista';
 
 // Intro a pantalla completa para móvil: video vertical limpio (sin velo ni
-// textos) con botón flotante "Entrar". Al terminar el video, el botón da
-// saltitos invitando a tocar. Se muestra una vez por sesión del navegador.
+// textos) que se reproduce UNA sola vez (sin loop), con sonido si el
+// navegador lo permite. Botón flotante "Entrar" para saltar en cualquier
+// momento; al terminar el video, el botón da saltitos invitando a entrar.
 export function MobileIntro() {
   const [visible, setVisible] = useState(() => {
     if (typeof window === 'undefined') return false;
@@ -14,6 +16,22 @@ export function MobileIntro() {
   });
   const [ended, setEnded] = useState(false);
   const [leaving, setLeaving] = useState(false);
+  const [muted, setMuted] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  // Intentar reproducir CON sonido; si el navegador lo bloquea (política de
+  // autoplay de iOS/Android), reproducir en silencio y mostrar el botón 🔊.
+  useEffect(() => {
+    if (!visible) return;
+    const v = videoRef.current;
+    if (!v) return;
+    v.muted = false;
+    v.play().catch(() => {
+      v.muted = true;
+      setMuted(true);
+      v.play().catch(() => setEnded(true));
+    });
+  }, [visible]);
 
   // Bloquear el scroll de fondo mientras la intro está en pantalla
   useEffect(() => {
@@ -33,20 +51,41 @@ export function MobileIntro() {
     window.setTimeout(() => setVisible(false), 500);
   };
 
+  const alternarSonido = () => {
+    const v = videoRef.current;
+    if (!v) return;
+    v.muted = !v.muted;
+    setMuted(v.muted);
+    if (v.paused && !ended) v.play().catch(() => {});
+  };
+
   return (
     <div
       className={`fixed inset-0 z-[200] bg-insamco-blue transition-opacity duration-500 ${leaving ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}
     >
       <video
+        ref={videoRef}
         src="/media/intro-vertical.mp4"
-        autoPlay
-        muted
         playsInline
         preload="auto"
         onEnded={() => setEnded(true)}
+        onClick={alternarSonido}
         className="absolute inset-0 w-full h-full object-cover"
       />
-      <div className="absolute inset-x-0 bottom-0 pb-10 flex justify-center" style={{ paddingBottom: 'calc(2.5rem + env(safe-area-inset-bottom))' }}>
+
+      {/* Indicador/activador de sonido */}
+      <button
+        type="button"
+        onClick={alternarSonido}
+        aria-label={muted ? 'Activar sonido' : 'Silenciar'}
+        className="absolute top-5 right-5 inline-flex items-center gap-2 rounded-full bg-black/40 backdrop-blur px-4 py-2 text-xs font-semibold text-white"
+        style={{ marginTop: 'env(safe-area-inset-top)' }}
+      >
+        {muted ? <VolumeX size={15} /> : <Volume2 size={15} className="text-insamco-gold" />}
+        {muted ? 'Activar sonido' : ''}
+      </button>
+
+      <div className="absolute inset-x-0 bottom-0 flex justify-center" style={{ paddingBottom: 'calc(2.5rem + env(safe-area-inset-bottom))' }}>
         <button
           type="button"
           onClick={entrar}

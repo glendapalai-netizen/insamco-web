@@ -1,4 +1,5 @@
-import { Lightbulb, Wrench, PackageSearch, Globe } from 'lucide-react';
+import { useState } from 'react';
+import { Lightbulb, Wrench, PackageSearch, Globe, Volume2, VolumeX } from 'lucide-react';
 
 const services = [
   {
@@ -36,6 +37,7 @@ const services = [
 ];
 
 export function Services() {
+  const [conSonido, setConSonido] = useState(false);
 
   return (
     <section id="servicios" className="py-24 bg-insamco-blue text-white overflow-hidden">
@@ -44,15 +46,24 @@ export function Services() {
           <h2 className="text-sm font-bold tracking-widest uppercase text-insamco-gold mb-3">Nuestros Pilares</h2>
           <h3 className="text-3xl md:text-5xl font-bold mb-6 text-white leading-tight">Más que un proveedor, un departamento anexo a tu empresa</h3>
           
-          <div className="mt-10 mb-10 w-full aspect-video rounded-sm overflow-hidden shadow-2xl ring-1 ring-white/10 relative">
-             <video 
-                src="/media/video-institucional.mp4" 
-                autoPlay 
-                loop 
-                muted 
-                playsInline 
+          <div
+            className="mt-10 mb-10 w-full aspect-video rounded-sm overflow-hidden shadow-2xl ring-1 ring-white/10 relative cursor-pointer group/video"
+            onClick={() => setConSonido(v => !v)}
+            role="button"
+            aria-label={conSonido ? 'Silenciar video' : 'Activar sonido del video'}
+          >
+             <video
+                src="/media/video-institucional.mp4"
+                autoPlay
+                loop
+                muted={!conSonido}
+                playsInline
                 className="w-full h-full object-cover"
              />
+             <div className="absolute bottom-3 right-3 inline-flex items-center gap-2 rounded-full bg-black/50 backdrop-blur px-4 py-2 text-xs font-semibold text-white transition-opacity group-hover/video:bg-black/70">
+               {conSonido ? <Volume2 size={15} className="text-insamco-gold" /> : <VolumeX size={15} />}
+               {conSonido ? 'Sonido activado' : 'Haz clic para activar el sonido'}
+             </div>
           </div>
 
           <p className="text-slate-300 text-lg md:text-xl font-light">
