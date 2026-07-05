@@ -114,7 +114,7 @@ export function Chatbot() {
       {/* Floating Action Button */}
       <button
         onClick={() => setIsOpen(true)}
-        className={`fixed bottom-6 right-6 w-14 h-14 bg-insamco-blue rounded-full shadow-2xl flex items-center justify-center text-white hover:bg-[#1a3257] transition-all hover:scale-110 z-40 ${isOpen ? 'scale-0 opacity-0' : 'scale-100 opacity-100'}`}
+        className={`fixed bottom-20 right-4 md:bottom-6 md:right-6 w-14 h-14 bg-insamco-blue rounded-full shadow-2xl flex items-center justify-center text-white hover:bg-[#1a3257] transition-all hover:scale-110 z-40 ${isOpen ? 'scale-0 opacity-0' : 'scale-100 opacity-100'}`}
         aria-label="Abrir chat Tyti"
       >
         <div className="relative w-full h-full flex items-center justify-center">
@@ -128,7 +128,7 @@ export function Chatbot() {
 
       {/* Chat Window */}
       <div 
-        className={`fixed bottom-6 right-6 w-[350px] sm:w-[400px] h-[600px] max-h-[80vh] bg-white rounded-lg shadow-2xl flex flex-col z-50 transition-all origin-bottom-right ${isOpen ? 'scale-100 opacity-100' : 'scale-50 opacity-0 pointer-events-none'}`}
+        className={`fixed bottom-20 right-4 md:bottom-6 md:right-6 w-[350px] sm:w-[400px] h-[600px] max-h-[75vh] bg-white rounded-lg shadow-2xl flex flex-col z-50 transition-all origin-bottom-right ${isOpen ? 'scale-100 opacity-100' : 'scale-50 opacity-0 pointer-events-none'}`}
       >
         {/* Header */}
         <div className="bg-insamco-blue p-4 rounded-t-lg flex justify-between items-center shrink-0">

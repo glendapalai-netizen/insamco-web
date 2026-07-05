@@ -1,6 +1,8 @@
+import { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { Navbar } from './components/layout/Navbar';
 import { Footer } from './components/layout/Footer';
+import { TabDock, TabId } from './components/layout/TabDock';
 import { Hero } from './components/sections/Hero';
 import { Benefits } from './components/sections/Benefits';
 import { Services } from './components/sections/Services';
@@ -11,25 +13,76 @@ import { Testimonials } from './components/sections/Testimonials';
 import { Contact } from './components/sections/Contact';
 import { Chatbot } from './components/ui/Chatbot';
 import { MobileIntro } from './components/ui/MobileIntro';
+import { WhatsAppButton } from './components/ui/WhatsAppButton';
 import Admin from './pages/Admin';
 
+// A qué pestaña pertenece cada ancla (#...) para que los botones internos
+// («Solicitar Cotización», enlaces del navbar y del footer) cambien de pestaña.
+const anclaAPestana: Record<string, TabId> = {
+  inicio: 'inicio',
+  beneficios: 'inicio',
+  productos: 'productos',
+  aplicaciones: 'productos',
+  servicios: 'servicios',
+  testimonios: 'servicios',
+  nosotros: 'nosotros',
+  contacto: 'contacto',
+};
+
 function Home() {
+  const [tab, setTab] = useState<TabId>('inicio');
+
+  // Navegación tipo app: los enlaces de ancla cambian de pestaña en lugar de hacer scroll
+  useEffect(() => {
+    const onClick = (e: MouseEvent) => {
+      const a = (e.target as HTMLElement).closest('a[href^="#"]') as HTMLAnchorElement | null;
+      if (!a) return;
+      const destino = anclaAPestana[a.getAttribute('href')!.slice(1)];
+      if (!destino) return;
+      e.preventDefault();
+      setTab(destino);
+    };
+    document.addEventListener('click', onClick);
+    return () => document.removeEventListener('click', onClick);
+  }, []);
+
+  // Al cambiar de pestaña, subir al inicio (como una app)
+  useEffect(() => {
+    window.scrollTo({ top: 0 });
+  }, [tab]);
+
+  const mostrar = (ids: TabId[]) => ids.includes(tab);
+
   return (
     <div className="min-h-screen flex flex-col font-sans">
       <MobileIntro />
       <Navbar />
-      <main className="flex-grow">
-        <Hero />
-        <Benefits />
-        <Services />
-        <Products />
-        <Applications />
-        <About />
-        <Testimonials />
-        <Contact />
+      <main className={`flex-grow pb-24 md:pb-28 ${tab !== 'inicio' ? 'pt-16 md:pt-20' : ''}`}>
+        {mostrar(['inicio']) && (
+          <>
+            <Hero />
+            <Benefits />
+          </>
+        )}
+        {mostrar(['productos']) && (
+          <>
+            <Products />
+            <Applications />
+          </>
+        )}
+        {mostrar(['servicios']) && (
+          <>
+            <Services />
+            <Testimonials />
+          </>
+        )}
+        {mostrar(['nosotros']) && <About />}
+        {mostrar(['contacto']) && <Contact />}
       </main>
       <Footer />
       <Chatbot />
+      <WhatsAppButton />
+      <TabDock active={tab} onChange={setTab} />
     </div>
   );
 }
