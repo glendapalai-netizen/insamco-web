@@ -17,8 +17,8 @@ export function Applications() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           
           <div>
-            <h2 className="text-sm font-bold tracking-widest uppercase text-insamco-gold mb-3">Sectores y Alcance</h2>
-            <h3 className="text-3xl md:text-4xl font-bold mb-6">Soluciones para toda la industria</h3>
+            <h2 className="text-sm font-bold tracking-widest uppercase text-insamco-gold mb-3">Aplicaciones</h2>
+            <h3 className="text-3xl md:text-4xl font-bold mb-6">Sectores y alcance: soluciones para toda la industria</h3>
             <p className="text-slate-300 text-lg font-light mb-8 leading-relaxed">
               Adaptamos nuestro portafolio de materias primas a los estándares más exigentes de múltiples sectores. Atendemos tanto al <strong className="text-white font-semibold">Sector Privado</strong> (industria en general) como al <strong className="text-white font-semibold">Sector Público</strong> (alcaldías y gobernaciones, a través de aliados comerciales).
             </p>

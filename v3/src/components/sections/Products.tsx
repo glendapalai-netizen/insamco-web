@@ -1,9 +1,10 @@
 import { useState } from 'react';
-import { FlaskConical, Layers, Mountain, Droplet, Gauge, Beaker, Download, X, ZoomIn, FileText, Mail, CheckCircle2, Loader2 } from 'lucide-react';
-import jsPDF from 'jspdf';
-import 'jspdf-autotable';
+import { FlaskConical, Layers, Mountain, Droplet, Gauge, Beaker, Download, X, ZoomIn, FileText, Mail, CheckCircle2, Loader2, MessageCircle } from 'lucide-react';
 
 const CORREOS_COMERCIALES = 'sergio@grupoinsamco.com,andreaosorio@grupoinsamco.com';
+const WHATSAPP = '573507174992';
+// Catálogo oficial en PDF (enviado por Sergio); para actualizarlo basta reemplazar este archivo
+const CATALOGO_PDF = '/media/Catalogo-Materias-Primas-Insamco.pdf';
 
 // Fichas infográficas (láminas) que se muestran completas y ampliables
 const laminas = [
@@ -163,82 +164,13 @@ export function Products() {
       }
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       setFichaEnviada(true);
+      // Flujo V2: queda guardada en el panel y se abre el correo del usuario ya redactado
+      window.location.href = mailtoFicha();
     } catch {
       setFichaErrorGeneral('No pudimos registrar la solicitud. Intenta de nuevo en unos segundos.');
     } finally {
       setFichaEnviando(false);
     }
-  };
-
-  const handleDownloadCatalog = () => {
-    const doc = new jsPDF();
-
-    // Header
-    doc.setFillColor(26, 54, 93); // insamco-blue
-    doc.rect(0, 0, 210, 40, 'F');
-
-    doc.setTextColor(255, 255, 255);
-    doc.setFontSize(22);
-    doc.setFont('helvetica', 'bold');
-    doc.text('GRUPO INSAMCO S.A.S.', 20, 20);
-
-    doc.setFontSize(10);
-    doc.setFont('helvetica', 'normal');
-    doc.text('Catálogo de Materias Primas Industriales', 20, 30);
-
-    // Body
-    doc.setTextColor(0, 0, 0);
-    let startY = 50;
-
-    lineas.forEach((linea) => {
-      if (startY > 240) {
-        doc.addPage();
-        startY = 20;
-      }
-      doc.setFontSize(16);
-      doc.setFont('helvetica', 'bold');
-      doc.setTextColor(226, 193, 68);
-      doc.text(linea.titulo.toUpperCase(), 20, startY);
-      startY += 10;
-
-      linea.categorias.forEach((product) => {
-      doc.setFontSize(14);
-      doc.setFont('helvetica', 'bold');
-      doc.setTextColor(26, 54, 93);
-      doc.text(product.category, 20, startY);
-
-      doc.setFontSize(10);
-      doc.setFont('helvetica', 'normal');
-      doc.setTextColor(100, 100, 100);
-      doc.text(product.description, 20, startY + 6);
-
-      // @ts-ignore
-      doc.autoTable({
-        startY: startY + 10,
-        head: [['Producto', 'Disponibilidad']],
-        body: product.items.map(item => [item, 'Stock Inmediato']),
-        theme: 'striped',
-        headStyles: { fillColor: [226, 193, 68], textColor: [26, 54, 93], fontStyle: 'bold' },
-        styles: { font: 'helvetica' },
-        margin: { left: 20, right: 20 }
-      });
-
-      // @ts-ignore
-      startY = doc.lastAutoTable.finalY + 15;
-
-      if (startY > 250) {
-        doc.addPage();
-        startY = 20;
-      }
-      });
-    });
-
-    // Footer
-    doc.setFontSize(8);
-    doc.setTextColor(150, 150, 150);
-    doc.text('Generado automáticamente - Grupo Insamco S.A.S. - desde 2015', 20, 285);
-
-    doc.save('Catalogo_Productos_Insamco.pdf');
   };
 
   return (
@@ -259,13 +191,14 @@ export function Products() {
             >
               Consultar Disponibilidad
             </a>
-            <button
-              onClick={handleDownloadCatalog}
+            <a
+              href={CATALOGO_PDF}
+              download="Catalogo-Materias-Primas-Insamco.pdf"
               className="shrink-0 bg-insamco-gold hover:bg-yellow-500 text-insamco-blue font-bold px-6 py-3 rounded-sm transition-colors uppercase tracking-wide text-sm flex items-center justify-center gap-2 shadow-sm"
             >
               <Download size={18} />
               Descargar Catálogo PDF
-            </button>
+            </a>
           </div>
         </div>
 
@@ -381,16 +314,27 @@ export function Products() {
                 <CheckCircle2 className="w-14 h-14 text-insamco-gold mx-auto mb-4" />
                 <h4 className="text-xl font-bold text-slate-900 mb-2">¡Solicitud registrada!</h4>
                 <p className="text-slate-600 mb-6 text-sm leading-relaxed">
-                  Nuestro equipo te enviará la ficha técnica de <strong>{fichaProducto}</strong> al correo indicado.
-                  Para agilizar, puedes enviarla tú mismo(a) por correo:
+                  Se abrió tu correo con la solicitud de <strong>{fichaProducto}</strong> ya redactada —
+                  solo dale <strong>enviar</strong>. Si no se abrió, usa el botón dorado.
                 </p>
-                <a
-                  href={mailtoFicha()}
-                  className="w-full flex justify-center items-center gap-2 bg-insamco-gold hover:bg-yellow-500 text-insamco-blue font-bold px-6 py-3.5 rounded-sm transition-all uppercase tracking-wide text-sm"
-                >
-                  <Mail size={16} />
-                  Enviar por correo
-                </a>
+                <div className="flex flex-col gap-3">
+                  <a
+                    href={mailtoFicha()}
+                    className="w-full flex justify-center items-center gap-2 bg-insamco-gold hover:bg-yellow-500 text-insamco-blue font-bold px-6 py-3.5 rounded-sm transition-all uppercase tracking-wide text-sm"
+                  >
+                    <Mail size={16} />
+                    Abrir el correo de nuevo
+                  </a>
+                  <a
+                    href={`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(`Buen día, solicito la ficha técnica de: ${fichaProducto}. Soy ${fichaForm.nombre} de ${fichaForm.empresa}.`)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full flex justify-center items-center gap-2 bg-[#25D366] hover:bg-[#1fbd59] text-white font-bold px-6 py-3.5 rounded-sm transition-all uppercase tracking-wide text-sm"
+                  >
+                    <MessageCircle size={16} />
+                    Prefiero por WhatsApp
+                  </a>
+                </div>
                 <button
                   type="button"
                   onClick={cerrarFicha}

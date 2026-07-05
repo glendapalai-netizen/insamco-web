@@ -32,21 +32,29 @@ const anclaAPestana: Record<string, TabId> = {
 function Home() {
   const [tab, setTab] = useState<TabId>('inicio');
 
-  // Navegación tipo app: los enlaces de ancla cambian de pestaña en lugar de hacer scroll
+  // Navegación tipo app: los enlaces de ancla cambian de pestaña en lugar de hacer scroll.
+  // Si el ancla apunta a una sección secundaria (ej. Aplicaciones dentro de Productos),
+  // después del cambio se desplaza hasta esa sección.
   useEffect(() => {
     const onClick = (e: MouseEvent) => {
       const a = (e.target as HTMLElement).closest('a[href^="#"]') as HTMLAnchorElement | null;
       if (!a) return;
-      const destino = anclaAPestana[a.getAttribute('href')!.slice(1)];
+      const ancla = a.getAttribute('href')!.slice(1);
+      const destino = anclaAPestana[ancla];
       if (!destino) return;
       e.preventDefault();
       setTab(destino);
+      setTimeout(() => {
+        const el = document.getElementById(ancla);
+        if (el && ancla !== destino) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        else window.scrollTo({ top: 0 });
+      }, 80);
     };
     document.addEventListener('click', onClick);
     return () => document.removeEventListener('click', onClick);
   }, []);
 
-  // Al cambiar de pestaña, subir al inicio (como una app)
+  // Al cambiar de pestaña desde el dock, subir al inicio (como una app)
   useEffect(() => {
     window.scrollTo({ top: 0 });
   }, [tab]);

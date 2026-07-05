@@ -62,6 +62,8 @@ export function Contact() {
       }
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       setSent(true);
+      // Flujo V2: queda guardada en el panel y se abre el correo del usuario ya redactado
+      window.location.href = mailtoHref();
     } catch {
       setErrorGeneral('No pudimos registrar la solicitud. Intenta de nuevo o escríbenos directo por WhatsApp.');
     } finally {
@@ -113,8 +115,8 @@ export function Contact() {
                 <CheckCircle2 className="w-16 h-16 text-insamco-gold mx-auto mb-6" />
                 <h4 className="text-2xl font-bold text-white mb-3">¡Solicitud registrada!</h4>
                 <p className="text-slate-300 mb-8 leading-relaxed">
-                  Nuestro equipo comercial ya recibió tus datos y te contactará pronto.
-                  Si quieres agilizar la respuesta, envíanos tu solicitud directamente:
+                  Se abrió tu correo con la solicitud ya redactada para nuestro equipo comercial —
+                  solo dale <strong className="text-white">enviar</strong>. Si no se abrió, usa el botón dorado.
                 </p>
                 <div className="flex flex-col gap-3">
                   <a
@@ -122,7 +124,7 @@ export function Contact() {
                     className="w-full flex justify-center items-center gap-2 bg-insamco-gold hover:bg-yellow-500 text-insamco-blue font-bold px-8 py-4 rounded-sm transition-all uppercase tracking-wide"
                   >
                     <Mail size={18} />
-                    Enviar por correo
+                    Abrir el correo de nuevo
                   </a>
                   <a
                     href={whatsappHref()}

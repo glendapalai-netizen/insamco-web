@@ -46,3 +46,8 @@ html {
   font-weight: 600;
   color: #1A365D;
 }
+
+/* Deja espacio para el navbar fijo al desplazarse a una sección */
+section[id] {
+  scroll-margin-top: 5.5rem;
+}
