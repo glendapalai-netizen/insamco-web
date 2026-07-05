@@ -13,57 +13,103 @@ const laminas = [
   { id: 'aditivos', titulo: 'Aditivos Especiales', image: '/media/producto-4.jpg' },
 ];
 
-// Catálogo completo por categorías (referencias reales del inventario)
-const catalogo = [
+// Catálogo oficial por líneas y categorías (PDF "Catálogo Portafolio de Materias Primas")
+const lineas = [
   {
-    id: 'pigmentos',
-    category: 'Pigmentos — Dióxido de Titanio',
-    icon: <FlaskConical className="w-6 h-6" />,
-    description: 'Pigmentos blancos de altísima pureza y poder cubriente.',
-    items: ['Doguide SR-2377', 'Lomon Billions R-996', 'Billions BLR-895'],
-  },
-  {
-    id: 'resinas',
-    category: 'Resinas',
-    icon: <Layers className="w-6 h-6" />,
-    description: 'Vehículos base esenciales para formulaciones duraderas.',
-    items: ['Resina Acrílica Estirenada 554', 'Resina Vinil Acrílica 6503', 'Resina Elastomérica 553'],
-  },
-  {
-    id: 'minerales',
-    category: 'Cargas Minerales',
-    icon: <Mountain className="w-6 h-6" />,
-    description: 'Optimizadores de propiedades mecánicas y de volumen.',
-    items: ['Caolín Calcinado Atlas C98', 'Caomín C-085-20', 'Carbonato de Calcio OMYA 1', 'Carbonato de Calcio OMYA 4'],
-  },
-  {
-    id: 'espesantes',
-    category: 'Espesantes',
-    icon: <Gauge className="w-6 h-6" />,
-    description: 'Control preciso de la reología y viscosidad de tus formulaciones.',
-    items: ['Espesante Texilan 538', 'Espesante Uretánico U300E', 'Tylose 100.000', 'Tylose 60.000'],
-  },
-  {
-    id: 'aditivos',
-    category: 'Aditivos',
-    icon: <Droplet className="w-6 h-6" />,
-    description: 'Ajuste fino para estabilidad, aplicación y desempeño.',
-    items: [
-      'Bactericida APS 7601',
-      'Texanol',
-      'Dispersante Texilan 1560',
-      'Antiespumante INDOL NDW',
-      'Nivelador Date P',
-      'Tergitol NF-10',
-      'Hidrofugante Indol EP',
+    id: 'agua',
+    titulo: 'Línea Base Agua',
+    categorias: [
+      {
+        id: 'pigmentos',
+        category: 'Pigmentos',
+        icon: <FlaskConical className="w-6 h-6" />,
+        description: 'Dióxidos de titanio de altísima pureza y poder cubriente.',
+        items: [
+          'Dióxido de Titanio Doguide SR-2377',
+          'Dióxido de Titanio Lomon Billions R-996',
+          'Dióxido de Titanio Billions BLR-895 (Grado Cloruro)',
+        ],
+      },
+      {
+        id: 'resinas-agua',
+        category: 'Resinas',
+        icon: <Layers className="w-6 h-6" />,
+        description: 'Vehículos base esenciales para formulaciones duraderas.',
+        items: ['Resina Acrílica Estirenada 554', 'Resina Vinil Acrílica 6503', 'Resina Elastomérica 553'],
+      },
+      {
+        id: 'minerales',
+        category: 'Cargas Minerales',
+        icon: <Mountain className="w-6 h-6" />,
+        description: 'Optimizadores de propiedades mecánicas y de volumen.',
+        items: [
+          'Caolín Calcinado Atlas C98',
+          'Caomín C-085-20 (Caolín Tiza)',
+          'Carbonato de Calcio OMYA 1',
+          'Carbonato de Calcio OMYA 4',
+        ],
+      },
+      {
+        id: 'espesantes',
+        category: 'Espesantes',
+        icon: <Gauge className="w-6 h-6" />,
+        description: 'Control preciso de la reología y viscosidad de tus formulaciones.',
+        items: [
+          'Espesante Acrílico Texilan 538',
+          'Espesante Uretánico U300E',
+          'Espesante Celulósico Tylose 100.000',
+          'Espesante Celulósico Tylose 60.000',
+        ],
+      },
+      {
+        id: 'aditivos-agua',
+        category: 'Aditivos',
+        icon: <Droplet className="w-6 h-6" />,
+        description: 'Ajuste fino para estabilidad, aplicación y desempeño.',
+        items: [
+          'Bactericida APS 7601',
+          'Texanol Coalescente',
+          'Dispersante Texilan 1560',
+          'Antiespumante INDOL NDW',
+          'Nivelador de pH Date P',
+          'Nonil Fenol Tergitol 10 moles',
+          'Hidrofugante Indol EP',
+        ],
+      },
+      {
+        id: 'solventes-aux',
+        category: 'Solventes y Auxiliares',
+        icon: <Beaker className="w-6 h-6" />,
+        description: 'Complementos esenciales para el proceso productivo.',
+        items: ['Monoetilenglicol'],
+      },
     ],
   },
   {
-    id: 'solventes',
-    category: 'Solventes y Auxiliares',
-    icon: <Beaker className="w-6 h-6" />,
-    description: 'Complementos esenciales para el proceso productivo.',
-    items: ['Monoetilenglicol'],
+    id: 'solvente',
+    titulo: 'Línea Base Solvente',
+    categorias: [
+      {
+        id: 'resinas-solvente',
+        category: 'Resinas',
+        icon: <Layers className="w-6 h-6" />,
+        description: 'Bases para esmaltes y acabados de alto desempeño.',
+        items: ['Resina Media en Soya 025P al 50% para Esmaltes'],
+      },
+      {
+        id: 'aditivos-solvente',
+        category: 'Aditivos',
+        icon: <Droplet className="w-6 h-6" />,
+        description: 'Secado, dispersión y estabilidad para sistemas base solvente.',
+        items: [
+          'Secante Trimetálico',
+          'Dispersante Troysperce CD1',
+          'Antinata Antipiel',
+          'Antisedimentante (Bentona 34)',
+          'Emulsificante Diasstab GAT',
+        ],
+      },
+    ],
   },
 ];
 
@@ -144,7 +190,18 @@ export function Products() {
     doc.setTextColor(0, 0, 0);
     let startY = 50;
 
-    catalogo.forEach((product) => {
+    lineas.forEach((linea) => {
+      if (startY > 240) {
+        doc.addPage();
+        startY = 20;
+      }
+      doc.setFontSize(16);
+      doc.setFont('helvetica', 'bold');
+      doc.setTextColor(226, 193, 68);
+      doc.text(linea.titulo.toUpperCase(), 20, startY);
+      startY += 10;
+
+      linea.categorias.forEach((product) => {
       doc.setFontSize(14);
       doc.setFont('helvetica', 'bold');
       doc.setTextColor(26, 54, 93);
@@ -173,6 +230,7 @@ export function Products() {
         doc.addPage();
         startY = 20;
       }
+      });
     });
 
     // Footer
@@ -234,9 +292,15 @@ export function Products() {
           ))}
         </div>
 
-        {/* Catálogo por categorías con solicitud de ficha técnica */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {catalogo.map((product) => (
+        {/* Catálogo oficial por líneas, con solicitud de ficha técnica */}
+        {lineas.map((linea) => (
+        <div key={linea.id} className="mb-12 last:mb-0">
+          <div className="flex items-center gap-4 mb-6">
+            <h4 className="text-xl font-bold text-insamco-blue uppercase tracking-wide">{linea.titulo}</h4>
+            <div className="flex-grow h-px bg-insamco-gold/50"></div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {linea.categorias.map((product) => (
             <div key={product.id} className="bg-white border border-slate-200 hover:border-insamco-blue transition-colors rounded-sm flex flex-col h-full shadow-sm hover:shadow-md">
               <div className="p-6 flex flex-col flex-grow">
                 <div className="flex items-center gap-3 mb-3">
@@ -268,7 +332,9 @@ export function Products() {
               </div>
             </div>
           ))}
+          </div>
         </div>
+        ))}
       </div>
 
       {zoomed && (
