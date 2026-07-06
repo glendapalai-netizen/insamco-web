@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Instagram, ArrowUpRight } from 'lucide-react';
 import { Logo } from '../ui/Logo';
+
+const INSTAGRAM_URL = 'https://www.instagram.com/grupoinsamco';
+const CONVERSOR_URL = 'https://grupoinsamcoexchange.netlify.app/';
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -37,15 +40,35 @@ export function Navbar() {
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <a 
-                key={link.name} 
+              <a
+                key={link.name}
                 href={link.href}
                 className="text-sm font-semibold text-slate-700 hover:text-insamco-blue transition-colors uppercase tracking-wide"
               >
                 {link.name}
               </a>
             ))}
-            <a 
+            <a
+              href={CONVERSOR_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 text-sm font-semibold text-slate-700 hover:text-insamco-blue transition-colors uppercase tracking-wide"
+              title="Conversor de divisas Insamco"
+            >
+              Conversor
+              <ArrowUpRight size={14} className="opacity-60" />
+            </a>
+            <a
+              href={INSTAGRAM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram de Grupo Insamco"
+              title="@grupoinsamco en Instagram"
+              className="text-slate-500 hover:text-insamco-blue transition-colors"
+            >
+              <Instagram size={20} />
+            </a>
+            <a
               href="#contacto"
               className="bg-insamco-gold hover:bg-yellow-500 text-insamco-blue font-bold px-6 py-2.5 rounded-sm transition-colors uppercase tracking-wide text-sm shadow-sm"
             >
@@ -68,8 +91,8 @@ export function Navbar() {
         <div className="md:hidden bg-white border-t border-slate-100 absolute top-full left-0 w-full shadow-lg">
           <div className="px-4 pt-2 pb-6 space-y-2 flex flex-col">
             {navLinks.map((link) => (
-              <a 
-                key={link.name} 
+              <a
+                key={link.name}
                 href={link.href}
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="block px-3 py-3 text-base font-semibold text-slate-700 hover:text-insamco-blue hover:bg-slate-50 uppercase tracking-wide"
@@ -77,6 +100,24 @@ export function Navbar() {
                 {link.name}
               </a>
             ))}
+            <a
+              href={CONVERSOR_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="flex items-center gap-1 px-3 py-3 text-base font-semibold text-slate-700 hover:text-insamco-blue hover:bg-slate-50 uppercase tracking-wide"
+            >
+              Conversor <ArrowUpRight size={16} className="opacity-60" />
+            </a>
+            <a
+              href={INSTAGRAM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="flex items-center gap-2 px-3 py-3 text-base font-semibold text-slate-700 hover:text-insamco-blue hover:bg-slate-50 uppercase tracking-wide"
+            >
+              <Instagram size={18} /> Instagram
+            </a>
             <div className="pt-4 px-3">
               <a 
                 href="#contacto"

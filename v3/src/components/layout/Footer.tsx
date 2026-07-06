@@ -1,4 +1,4 @@
-import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Instagram, ArrowUpRight } from 'lucide-react';
 
 export function Footer() {
   return (
@@ -27,6 +27,26 @@ export function Footer() {
                   </a>
                 </li>
               ))}
+              <li>
+                <a
+                  href="https://www.instagram.com/grupoinsamco"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm hover:text-insamco-gold transition-colors"
+                >
+                  <Instagram size={16} className="text-insamco-gold" /> @grupoinsamco
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://grupoinsamcoexchange.netlify.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-sm hover:text-insamco-gold transition-colors"
+                >
+                  Conversor de divisas <ArrowUpRight size={14} className="opacity-60" />
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -72,6 +92,17 @@ export function Footer() {
         <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs text-slate-500">
             &copy; {new Date().getFullYear()} Grupo Insamco S.A.S. Todos los derechos reservados.
+          </p>
+          <p className="text-xs text-slate-500">
+            Diseño web y marketing:{' '}
+            <a
+              href="https://bhgve.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-slate-400 hover:text-insamco-gold transition-colors"
+            >
+              BHG
+            </a>
           </p>
           <p className="text-xs font-display tracking-widest text-slate-500 uppercase">
             — desde 2015 —
