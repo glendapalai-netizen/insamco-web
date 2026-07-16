@@ -130,6 +130,7 @@ footer a { color:var(--gold); text-decoration:none; }
     <a href="#c11" style="color:#F0DA8A; text-decoration:none; padding:8px 0; border-bottom:1px solid rgba(226,193,68,.2);">11 · Pagos en línea</a>
     <a href="#c12" style="color:#F0DA8A; text-decoration:none; padding:8px 0; border-bottom:1px solid rgba(226,193,68,.2);">12 · Enlaces y archivos</a>
     <a href="#c13" style="color:#F0DA8A; text-decoration:none; padding:8px 0; border-bottom:1px solid rgba(226,193,68,.2);">13 · Estado de la entrega</a>
+    <a href="#encuesta" style="color:#F0DA8A; text-decoration:none; padding:8px 0; border-bottom:1px solid rgba(226,193,68,.2);">⭐ Tu opinión (encuesta)</a>
   </div>
 </div>
 </div>
@@ -474,6 +475,62 @@ footer a { color:var(--gold); text-decoration:none; }
 </div>
 
 </div>
+
+
+<!-- ENCUESTA SATISFACCION -->
+<div class="pagina dark2" id="encuesta" data-n="Tu opinión" style="text-align:center;">
+  <div class="kicker" style="color:var(--gold);">Antes de irte</div>
+  <h2 style="color:#fff;">¿Cómo te pareció tu marca?</h2>
+  <p style="max-width:560px; margin:0 auto 22px;">Tu opinión nos ayuda a seguir mejorando. Toma 30 segundos — y nos hace mucha ilusión leerte. 💛</p>
+
+  <div id="stars" style="font-size:2.4rem; letter-spacing:8px; cursor:pointer; margin:6px 0 22px;">
+    <span data-v="1">☆</span><span data-v="2">☆</span><span data-v="3">☆</span><span data-v="4">☆</span><span data-v="5">☆</span>
+  </div>
+
+  <div style="max-width:560px; margin:0 auto; text-align:left;">
+    <label style="display:block; color:#C9D6E4; font-size:.9rem; margin:10px 0 6px;">Lo que más te gustó</label>
+    <input id="q1" type="text" placeholder="Ej: el logo, la web, el Exchange..." style="width:100%; padding:12px 14px; border-radius:8px; border:1px solid rgba(226,193,68,.4); background:rgba(255,255,255,.06); color:#fff; font-size:.95rem;">
+    <label style="display:block; color:#C9D6E4; font-size:.9rem; margin:16px 0 6px;">¿Algo que mejorarías o te gustaría agregar?</label>
+    <input id="q2" type="text" placeholder="Cuéntanos con confianza" style="width:100%; padding:12px 14px; border-radius:8px; border:1px solid rgba(226,193,68,.4); background:rgba(255,255,255,.06); color:#fff; font-size:.95rem;">
+    <label style="display:block; color:#C9D6E4; font-size:.9rem; margin:16px 0 6px;">¿Nos recomendarías a otro empresario?</label>
+    <div id="rec" style="display:flex; gap:10px;">
+      <button type="button" data-r="Sí, claro" class="recbtn" style="flex:1; padding:11px; border-radius:8px; border:1px solid rgba(226,193,68,.4); background:rgba(255,255,255,.06); color:#fff; cursor:pointer;">Sí, claro 🙌</button>
+      <button type="button" data-r="Tal vez" class="recbtn" style="flex:1; padding:11px; border-radius:8px; border:1px solid rgba(226,193,68,.4); background:rgba(255,255,255,.06); color:#fff; cursor:pointer;">Tal vez</button>
+    </div>
+  </div>
+
+  <a id="enviar" class="btn" style="margin-top:26px; cursor:pointer;">Enviar mi opinión →</a>
+  <p class="note" style="color:#8FA6BF; margin-top:14px;">Se abre tu WhatsApp con el mensaje ya listo — solo le das enviar.</p>
+</div>
+
+<script>
+(function(){
+  var val=0, rec='';
+  var stars=document.querySelectorAll('#stars span');
+  stars.forEach(function(s){
+    s.addEventListener('click', function(){
+      val=+s.getAttribute('data-v');
+      stars.forEach(function(x){ x.textContent = (+x.getAttribute('data-v')<=val)?'★':'☆'; x.style.color=(+x.getAttribute('data-v')<=val)?'#E2C144':'#fff'; });
+    });
+  });
+  document.querySelectorAll('.recbtn').forEach(function(b){
+    b.addEventListener('click', function(){
+      rec=b.getAttribute('data-r');
+      document.querySelectorAll('.recbtn').forEach(function(x){ x.style.background='rgba(255,255,255,.06)'; });
+      b.style.background='rgba(226,193,68,.28)';
+    });
+  });
+  document.getElementById('enviar').addEventListener('click', function(){
+    var q1=document.getElementById('q1').value, q2=document.getElementById('q2').value;
+    var msg='⭐ ENCUESTA EL BOOK — Grupo Insamco%0A%0A'+
+      'Calificación: '+(val?('★'.repeat(val)+' ('+val+'/5)'):'(sin marcar)')+'%0A'+
+      'Lo que más me gustó: '+(q1||'—')+'%0A'+
+      'Mejoraría / agregaría: '+(q2||'—')+'%0A'+
+      '¿Nos recomendarías?: '+(rec||'—');
+    window.open('https://wa.me/573507174992?text='+msg,'_blank');
+  });
+})();
+</script>
 
 <footer>
   <img src="media/dorado-5.png" style="width:130px; margin:0 auto 14px;">
