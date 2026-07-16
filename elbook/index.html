@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EL BOOK — Grupo Insamco S.A.S.</title>
+<meta name="description" content="EL BOOK de Grupo Insamco: identidad, marca, web, Exchange y ecosistema digital completo. Por BHG Estudio.">
+<meta property="og:title" content="EL BOOK — Grupo Insamco S.A.S.">
+<meta property="og:image" content="media/hero-poster.jpg">
+<style>
+:root { --navy:#1A365D; --deep:#0F2340; --mid:#152A4A; --gold:#E2C144; --gold2:#D9A91A; --golds:#F0DA8A; --ink:#0F1B2E; --gris:#475569; --paper:#F7FAFC; }
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { font-family:'Segoe UI',-apple-system,sans-serif; background:#0B1B33; color:var(--ink); }
+img { max-width:100%; display:block; }
+
+/* HERO */
+.hero { position:relative; height:92vh; min-height:480px; overflow:hidden; background:#000; }
+.hero video { width:100%; height:100%; object-fit:cover; opacity:.92; }
+.hero .veil { position:absolute; inset:0; background:linear-gradient(180deg, rgba(11,27,51,.15) 55%, #0B1B33 100%); }
+.hero .brand { position:absolute; top:26px; left:30px; display:flex; align-items:center; gap:12px; color:#fff; }
+.hero .brand img { width:46px; }
+.hero .scrolldown { position:absolute; bottom:22px; left:50%; transform:translateX(-50%); color:var(--gold); font-size:1.6rem; animation:bob 1.6s infinite; }
+@keyframes bob { 0%,100%{transform:translate(-50%,0)} 50%{transform:translate(-50%,8px)} }
+
+/* PORTADA */
+.cover { background:linear-gradient(165deg,var(--navy),var(--deep) 75%); text-align:center; padding:80px 24px 90px; color:#fff; }
+.cover img.logo { width:min(300px,64vw); margin:0 auto 30px; }
+.cover h1 { font-size:clamp(3rem,9vw,5.5rem); letter-spacing:.08em; color:var(--gold); }
+.cover .sub { color:#C9D6E4; margin-top:14px; font-size:1.05rem; }
+.cover .firma { margin-top:34px; color:#8FA6BF; font-size:.85rem; }
+.cover .firma a { color:var(--gold); text-decoration:none; }
+
+/* MODO LIBRO */
+.book { padding:50px 14px 80px; background:radial-gradient(120% 60% at 50% 0%, #14294A 0%, #0B1B33 60%); }
+.pagina { background:#fff; max-width:920px; margin:0 auto 46px; border-radius:10px; padding:clamp(22px,4.5vw,52px); box-shadow:0 24px 60px rgba(0,0,0,.45), 0 2px 0 rgba(226,193,68,.6); position:relative; }
+.pagina.dark2 { background:linear-gradient(160deg,var(--navy),var(--deep) 75%); color:#fff; }
+.pagina::after { content:attr(data-n); position:absolute; bottom:12px; right:20px; font-size:.72rem; color:#9AA7B6; }
+.kicker { font-size:.72rem; letter-spacing:.24em; text-transform:uppercase; color:var(--gold2); font-weight:700; margin-bottom:8px; }
+h2 { font-size:clamp(1.4rem,3.4vw,1.9rem); color:var(--navy); margin-bottom:16px; }
+.dark2 h2 { color:#fff; }
+h2 .n { color:var(--gold2); }
+h3 { font-size:1.02rem; color:var(--navy); margin:18px 0 8px; }
+.dark2 h3 { color:var(--golds); }
+p, li { font-size:.95rem; line-height:1.65; color:var(--gris); }
+.dark2 p, .dark2 li { color:#C9D6E4; }
+p b, li b { color:var(--ink); } .dark2 p b, .dark2 li b { color:#fff; }
+ul { padding-left:20px; }
+.cap { background:var(--paper); border-left:3px solid var(--gold); padding:14px 18px; font-size:.92rem; line-height:1.6; border-radius:0 8px 8px 0; color:var(--gris); margin:14px 0; }
+.dark2 .cap { background:rgba(255,255,255,.06); color:#C9D6E4; }
+.cap .lbl { font-size:.68rem; letter-spacing:.18em; text-transform:uppercase; color:var(--gold2); font-weight:700; display:block; margin-bottom:6px; }
+table { width:100%; border-collapse:collapse; font-size:.88rem; margin:10px 0; }
+th { background:var(--navy); color:#fff; padding:9px 10px; text-align:left; font-size:.72rem; letter-spacing:.06em; text-transform:uppercase; }
+td { padding:9px 10px; border-bottom:1px solid #E3E8EF; vertical-align:top; color:var(--gris); }
+td b { color:var(--ink); }
+tr:nth-child(even) td { background:var(--paper); }
+.tablewrap { overflow-x:auto; }
+.imgcard { border:1px solid #E3E8EF; border-radius:10px; overflow:hidden; box-shadow:0 8px 22px rgba(26,54,93,.12); margin:12px 0; }
+.note { font-size:.8rem; color:#8894A3; font-style:italic; margin-top:6px; }
+.grid2 { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; }
+.grid3 { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:14px; }
+.sw { border-radius:10px; padding:14px; color:#fff; height:88px; display:flex; flex-direction:column; justify-content:flex-end; font-size:.85rem; }
+.sw span { font-size:.72rem; opacity:.85; }
+.chip { display:inline-block; background:var(--navy); color:#fff; font-size:.72rem; font-weight:700; padding:5px 14px; border-radius:99px; margin-bottom:10px; letter-spacing:.05em; }
+.vcard { background:var(--paper); border:1px solid #E3E8EF; border-radius:10px; overflow:hidden; }
+.vcard img { aspect-ratio:9/14; object-fit:cover; width:100%; }
+.vcard.h img { aspect-ratio:16/9; }
+.vcard .t { padding:10px 12px; font-size:.82rem; color:var(--ink); font-weight:600; }
+.vcard .t small { display:block; font-weight:400; color:#8894A3; }
+footer { text-align:center; color:#8FA6BF; padding:30px 20px 60px; font-size:.85rem; }
+footer a { color:var(--gold); text-decoration:none; }
+.btn { display:inline-block; background:var(--gold); color:var(--navy); font-weight:700; padding:13px 28px; border-radius:8px; text-decoration:none; margin-top:12px; }
+</style>
+</head>
+<body>
+
+<!-- HERO VIDEO -->
+<section class="hero">
+  <video autoplay muted loop playsinline poster="media/hero-poster.jpg">
+    <source src="media/hero.mp4" type="video/mp4">
+  </video>
+  <div class="veil"></div>
+  <div class="brand"><img src="media/logo-badge.png" alt=""><span style="font-weight:700; letter-spacing:.06em;">GRUPO INSAMCO S.A.S.</span></div>
+  <div class="scrolldown">▾</div>
+</section>
+
+<!-- PORTADA -->
+<section class="cover">
+  <img class="logo" src="media/dorado-1.png" alt="Grupo Insamco">
+  <h1>EL BOOK</h1>
+  <p class="sub">La marca completa · Identidad, web y ecosistema digital · Julio 2026</p>
+  <p class="firma">Preparado para <b style="color:#fff;">Sergio Mondragón · Grupo Insamco S.A.S.</b> · Cúcuta, Colombia<br>por <a href="https://bhgve.com">BHG Estudio</a> · Autoría Cle&amp;Fábula</p>
+</section>
+
+<div class="book">
+
+<!-- 01 PROYECTO -->
+<div class="pagina" data-n="01 · El proyecto">
+  <div class="kicker">Capítulo 01</div>
+  <h2><span class="n">01 ·</span> De la idea a grupoinsamco.com</h2>
+  <p style="font-size:1.05rem;">En julio de 2026, Grupo Insamco pasó de no tener presencia digital a tener <b>dominio propio, web premium, catálogo completo, panel administrativo, conversor de divisas y asistente con inteligencia artificial.</b></p>
+  <div class="tablewrap"><table>
+    <tr><th>Versión</th><th>Qué fue</th><th>Dónde</th></tr>
+    <tr><td><b>V1</b></td><td>Prototipo para validar contenido y estilo</td><td>insamcov1.netlify.app</td></tr>
+    <tr><td><b>V2</b></td><td>Formularios reales, panel admin, chatbot con IA</td><td>insamcov2.netlify.app</td></tr>
+    <tr><td><b>V3 ★</b></td><td><b>La elegida por Sergio</b>: diseño premium tipo app, videos, láminas</td><td><b>grupoinsamco.com</b> ✅</td></tr>
+    <tr><td>V3.1</td><td>Su navegación por pestañas se integró a la V3</td><td>archivada</td></tr>
+  </table></div>
+  <h3>La infraestructura</h3>
+  <div class="tablewrap"><table>
+    <tr><th>Componente</th><th>Servicio</th><th>Detalle</th></tr>
+    <tr><td><b>Código</b></td><td>GitHub</td><td>glendapalai-netizen/insamco-web — historial completo</td></tr>
+    <tr><td><b>Hosting</b></td><td>Netlify</td><td>Publicación automática al cambiar el código</td></tr>
+    <tr><td><b>Dominio</b></td><td>Squarespace</td><td>grupoinsamco.com — vence mayo 2027</td></tr>
+    <tr><td><b>Correo</b></td><td>Google Workspace</td><td>@grupoinsamco.com intacto</td></tr>
+    <tr><td><b>Chat Tyti</b></td><td>Google Gemini</td><td>IA entrenada sobre la empresa</td></tr>
+  </table></div>
+</div>
+
+<!-- 02 ADN -->
+<div class="pagina" data-n="02 · ADN de marca">
+  <div class="kicker">Capítulo 02</div>
+  <h2><span class="n">02 ·</span> ADN de marca</h2>
+  <div class="cap"><span class="lbl">Posicionamiento</span><b style="font-size:1.1rem;">"Tu aliado estratégico en materias primas para la industria."</b><br>Más que un proveedor: un departamento técnico anexo a la empresa del cliente. Valores: <b>confianza, compromiso, transparencia</b>.</div>
+  <div class="tablewrap"><table>
+    <tr><td><b>Razón social</b></td><td>Grupo Insamco S.A.S. · Fundada en 2015 — comunicar siempre <b>"más de 10 años"</b></td></tr>
+    <tr><td><b>Qué hace</b></td><td>Comercializadora e importadora de materias primas e insumos industriales para pinturas, plásticos y recubrimientos</td></tr>
+    <tr><td><b>Sede</b></td><td>Av. 7A #19N-50, Parque Industrial del Oriente, Bloque 2, Bodegas 1-3, Cúcuta</td></tr>
+    <tr><td><b>Cobertura</b></td><td>Colombia (consolidada) · Venezuela (expansión activa) · sector privado y público</td></tr>
+    <tr><td><b>Contactos</b></td><td>sergio@grupoinsamco.com · andreaosorio@grupoinsamco.com · WhatsApp +57 350 717 4992 (L-V 8:00–12:00 / 14:00–17:00)</td></tr>
+  </table></div>
+  <h3>Tono de voz</h3>
+  <p>Español profesional, cálido y claro. Técnico cuando hace falta (B2B industrial), nunca frío. Tuteo cercano: <i>"tu producción", "tu formulación"</i>. Frases bandera: <b>"Garantizamos la continuidad de tu producción"</b> · <b>"Más que un proveedor, un departamento anexo a tu empresa"</b>. El chat tiene personalidad propia: <b>Tyti</b>, asistente técnico experto y amigable.</p>
+</div>
+
+<!-- 02b CATALOGO -->
+<div class="pagina" data-n="02b · Catálogo oficial">
+  <div class="kicker">Capítulo 02</div>
+  <h2><span class="n">02b ·</span> El catálogo oficial — 28 referencias</h2>
+  <h3>Línea Base Agua (22)</h3>
+  <div class="tablewrap"><table>
+    <tr><td><b>Pigmentos TiO₂</b></td><td>Doguide SR-2377 · Lomon Billions R-996 · Billions BLR-895 (Grado Cloruro)</td></tr>
+    <tr><td><b>Resinas</b></td><td>Acrílica Estirenada 554 · Vinil Acrílica 6503 · Elastomérica 553</td></tr>
+    <tr><td><b>Cargas minerales</b></td><td>Caolín Calcinado Atlas C98 · Caomín C-085-20 · Carbonato OMYA 1 y OMYA 4</td></tr>
+    <tr><td><b>Espesantes</b></td><td>Acrílico Texilan 538 · Uretánico U300E · Celulósicos Tylose 100.000 y 60.000</td></tr>
+    <tr><td><b>Aditivos</b></td><td>Bactericida APS 7601 · Texanol Coalescente · Dispersante Texilan 1560 · Antiespumante INDOL NDW · Nivelador de pH Date P · Nonil Fenol Tergitol 10 moles · Hidrofugante Indol EP</td></tr>
+    <tr><td><b>Solventes/Auxiliares</b></td><td>Monoetilenglicol</td></tr>
+  </table></div>
+  <h3>Línea Base Solvente (6)</h3>
+  <div class="tablewrap"><table>
+    <tr><td><b>Resinas</b></td><td>Media en Soya 025P al 50% para Esmaltes</td></tr>
+    <tr><td><b>Aditivos</b></td><td>Secante Trimetálico · Dispersante Troysperce CD1 · Antinata Antipiel · Antisedimentante (Bentona 34) · Emulsificante Diasstab GAT</td></tr>
+  </table></div>
+  <div class="cap"><span class="lbl">Marcas representadas</span>Doguide · Lomon Billions · OMYA · Atlas · Tylose · Texilan · Indol · Tergitol · Troysperce — <b>importación directa, stock en Cúcuta</b>. Catálogo PDF: <a href="https://grupoinsamco.com/media/Catalogo-Materias-Primas-Insamco.pdf">descarga directa</a>.</div>
+</div>
+
+<!-- 03 LOGO -->
+<div class="pagina" data-n="03 · El logo">
+  <div class="kicker">Capítulo 03</div>
+  <h2><span class="n">03 ·</span> Un logo construido con lo que vendemos</h2>
+  <div class="imgcard"><img src="media/logo-3d-h.jpg" alt="Logo 3D Grupo Insamco"></div>
+  <p>El monograma <b>G + I</b> en dorado sobre azul profundo no es decoración: <b>cada material del logo es un mercado que la empresa atiende.</b></p>
+  <div class="tablewrap"><table>
+    <tr><th>Elemento</th><th>Material</th><th>Representa</th></tr>
+    <tr><td><b>La "G"</b> (pieza articulada)</td><td>Pieza mecánica industrial dorada</td><td>Materias primas en la industria</td></tr>
+    <tr><td><b>El techo / flecha ^</b></td><td>Plástico</td><td>El sector de los plásticos</td></tr>
+    <tr><td><b>La "I"</b></td><td>Microcemento pulido</td><td>La pintura arquitectónica</td></tr>
+    <tr><td><b>El fondo</b></td><td>Concreto con pintura de alta resistencia</td><td>Recubrimientos industriales</td></tr>
+    <tr><td><b>Las letras</b></td><td>Acabado de pintura automotriz</td><td>El sector automotriz</td></tr>
+  </table></div>
+</div>
+
+<!-- 03b FAMILIA DORADA -->
+<div class="pagina dark2" data-n="03b · La familia dorada">
+  <div class="kicker">Capítulo 03</div>
+  <h2><span class="n">03b ·</span> La familia dorada — la versión elegante</h2>
+  <p>El oro metálico sobre azul profundo: la voz formal de la marca para documentos, presentaciones y firmas.</p>
+  <div class="grid2" style="margin-top:16px;">
+    <div style="background:#12294A; border-radius:10px; padding:26px; text-align:center;"><img src="media/dorado-1.png" style="margin:auto;"><p class="note" style="color:#8FA6BF;">Principal — con razón social</p></div>
+    <div style="background:#12294A; border-radius:10px; padding:26px; text-align:center;"><img src="media/dorado-5.png" style="margin:auto;"><p class="note" style="color:#8FA6BF;">Con nombre — encabezados</p></div>
+    <div style="background:#12294A; border-radius:10px; padding:26px; text-align:center;"><img src="media/dorado-3.png" style="margin:auto;"><p class="note" style="color:#8FA6BF;">Monograma girado — sello</p></div>
+    <div style="background:#12294A; border-radius:10px; padding:26px; text-align:center;"><img src="media/dorado-4.png" style="margin:auto;"><p class="note" style="color:#8FA6BF;">Con firma lateral — lomos</p></div>
+  </div>
+</div>
+
+<!-- 03c VERSIONES -->
+<div class="pagina" data-n="03c · Versiones y usos">
+  <div class="kicker">Capítulo 03</div>
+  <h2><span class="n">03c ·</span> Las versiones y sus usos</h2>
+  <div class="grid3">
+    <div><div class="imgcard"><img src="media/logo-3d-v.jpg"></div><p class="note">3D vertical — celular, stories</p></div>
+    <div><div class="imgcard"><img src="media/logo-plano.jpg"></div><p class="note">Plano — documentos, fondos claros</p>
+    <div class="imgcard"><img src="media/logo-badge.png"></div><p class="note">Badge — redes, favicon</p></div>
+    <div><div class="imgcard"><img src="media/fondo-qr.jpg"></div><p class="note">Fondo con QR — celular del equipo</p></div>
+  </div>
+  <div class="cap"><span class="lbl">Regla de oro</span>El <b>dorado se reserva para conversión</b>: botones, llamados a la acción y acentos. Nunca como relleno general — así cada destello significa "aquí se actúa".</div>
+</div>
+
+<!-- 04 SISTEMA VISUAL -->
+<div class="pagina" data-n="04 · Sistema visual">
+  <div class="kicker">Capítulo 04</div>
+  <h2><span class="n">04 ·</span> Paleta y tipografías</h2>
+  <div class="grid3">
+    <div class="sw" style="background:#1A365D;"><b>Azul Insamco</b><span>#1A365D · principal</span></div>
+    <div class="sw" style="background:#0F2340;"><b>Azul profundo</b><span>#0F2340 · footer</span></div>
+    <div class="sw" style="background:#152A4A;"><b>Azul intermedio</b><span>#152A4A · tarjetas</span></div>
+    <div class="sw" style="background:#E2C144; color:#0F1B2E;"><b>Dorado Insamco</b><span>#E2C144 · SOLO conversión</span></div>
+    <div class="sw" style="background:#F0DA8A; color:#0F1B2E;"><b>Dorado suave</b><span>#F0DA8A · degradados</span></div>
+    <div class="sw" style="background:#F7FAFC; color:#0F1B2E; border:1px solid #E3E8EF;"><b>Superficie clara</b><span>#F7FAFC · secciones</span></div>
+    <div class="sw" style="background:#0F1B2E;"><b>Tinta</b><span>#0F1B2E · texto</span></div>
+    <div class="sw" style="background:#475569;"><b>Gris texto</b><span>#475569 · secundario</span></div>
+  </div>
+  <h3>Tipografías</h3>
+  <p><b>Montserrat</b> (500–900) para títulos y marca — mayúsculas con espaciado amplio en etiquetas. <b>Open Sans</b> (400–700) para el cuerpo.</p>
+</div>
+
+<!-- BRAND KIT -->
+<div class="pagina dark2" data-n="04b · Brand Kit completo">
+  <div class="kicker">Capítulo 04</div>
+  <h2><span class="n">04b ·</span> El Brand Kit completo — 7 láminas</h2>
+  <p>El sistema de identidad completo, lámina por lámina.</p>
+  <div style="display:grid; gap:14px; margin-top:14px;">
+    <div class="imgcard"><img src="media/brandkit-1.jpg"></div>
+    <div class="imgcard"><img src="media/brandkit-2.jpg"></div>
+    <div class="imgcard"><img src="media/brandkit-3.jpg"></div>
+    <div class="imgcard"><img src="media/brandkit-4.jpg"></div>
+    <div class="imgcard"><img src="media/brandkit-5.jpg"></div>
+    <div class="imgcard"><img src="media/brandkit-6.jpg"></div>
+    <div class="imgcard"><img src="media/brandkit-7.jpg"></div>
+  </div>
+</div>
+
+<!-- 05 LA WEB -->
+<div class="pagina" data-n="05 · La web">
+  <div class="kicker">Capítulo 05</div>
+  <h2><span class="n">05 ·</span> grupoinsamco.com — viva y verificada</h2>
+  <div class="imgcard"><img src="media/web-hero-v2.png"></div>
+  <div class="cap"><span class="lbl">Funciona como una app</span>
+  ✅ 5 pestañas en dock flotante · ✅ Catálogo con ficha técnica por producto (captura el lead) · ✅ Cotización con flujo doble (panel + correo) · ✅ Panel /admin con seguimiento · ✅ Chat Tyti con IA + WhatsApp directo · ✅ HTTPS que se renueva solo</div>
+  <h3>Las novedades ya publicadas (16-jul)</h3>
+  <div class="imgcard"><img src="media/web-brands-v2.png"></div>
+  <p class="note">"Marcas que representamos" — con los logos que envió Sergio: Doguide, LB Group, Andercol, Pangang/Ansteel, Atlas C-98.</p>
+  <div class="imgcard"><img src="media/web-exchange-v2.png"></div>
+  <p class="note">La sección Insamco Exchange con QR — y los 4 testimonios reales de clientes ya publicados. Además: <b>grupoinsamco.com/links</b> para la bio de Instagram.</p>
+</div>
+
+<!-- 06 MANUAL -->
+<div class="pagina" data-n="06 · Manual de uso">
+  <div class="kicker">Capítulo 06</div>
+  <h2><span class="n">06 ·</span> El día a día de Sergio y Andrea</h2>
+  <h3>¿Cómo llega una cotización?</h3>
+  <p>El cliente llena el formulario en <b>Contacto</b> → queda <b>guardada en el panel</b> Y se le abre su correo ya redactado hacia sergio@ y andreaosorio@. Después se le ofrece seguir por WhatsApp.</p>
+  <h3>¿Y una ficha técnica?</h3>
+  <p>Cada producto tiene botón <b>"Ficha técnica"</b>: el cliente deja sus datos → queda registrado Y se abre el correo redactado. El lead nunca se pierde.</p>
+  <h3>El panel — grupoinsamco.com/admin</h3>
+  <ul>
+    <li>Todas las cotizaciones y solicitudes, de la más nueva a la más vieja</li>
+    <li>Clic en correo = escribirle · clic en teléfono = WhatsApp</li>
+    <li><b>El chulito ✓</b>: de "Pendiente" (dorado) a "Contactado" (verde)</li>
+    <li>Consejo BHG: revisar el panel <b>una vez al día</b></li>
+  </ul>
+  <div class="cap"><span class="lbl">Preguntas frecuentes</span>
+  <b>¿Se daña el correo de la empresa?</b> No — web y correo conviven sin tocarse.<br>
+  <b>¿Cómo se cambia algo?</b> Se le pide a Glenda (BHG): minutos, con historial en GitHub.<br>
+  <b>¿Cuándo se renueva el dominio?</b> Mayo 2027 — Squarespace avisa por correo.<br>
+  <i>Las credenciales del panel van en documento aparte, por seguridad.</i></div>
+</div>
+
+<!-- 07 VIDEOS -->
+<div class="pagina" data-n="07 · Los videos">
+  <div class="kicker">Capítulo 07</div>
+  <h2><span class="n">07 ·</span> La videoteca de la marca</h2>
+  <p>Todas las piezas de video producidas, con su portada. Los archivos viven en la carpeta de Drive "ENTREGA SERGIO" y en el repositorio.</p>
+  <div class="grid3" style="margin-top:14px;">
+    <div class="vcard h"><img src="media/video-frame.jpg"><div class="t">Video institucional<small>Horizontal 10s · el del Reel de estreno · vive en la web</small></div></div>
+    <div class="vcard"><img src="media/vposter-reel-institucional.jpg"><div class="t">Reel institucional extendido<small>Vertical · remasterizado 14-jul</small></div></div>
+    <div class="vcard"><img src="media/vposter-inicio-vertical.jpg"><div class="t">Intro vertical de la web<small>La bienvenida móvil con "Entrar"</small></div></div>
+    <div class="vcard"><img src="media/vposter-portada-tracker.jpg"><div class="t">Portada tracker<small>Vertical · para stories</small></div></div>
+    <div class="vcard"><img src="media/vposter-logo-icono.jpg"><div class="t">Logo animado<small>El icono en movimiento · cierres de video</small></div></div>
+    <div class="vcard"><img src="media/vposter-exchange-demo.jpg"><div class="t">Exchange en acción<small>Demo del conversor</small></div></div>
+    <div class="vcard"><img src="media/vposter-video-corto.jpg"><div class="t">Pieza corta app<small>Vertical · transición de vistas</small></div></div>
+  </div>
+</div>
+
+<!-- 08 CALENDARIO -->
+<div class="pagina" data-n="08 · Instagram">
+  <div class="kicker">Capítulo 08</div>
+  <h2><span class="n">08 ·</span> Calendario de publicación — 2 semanas</h2>
+  <div class="tablewrap"><table>
+    <tr><th>Fecha</th><th>Formato</th><th>Tema</th></tr>
+    <tr><td><b>Vie 17</b></td><td>🎬 Reel</td><td>Presentación: la nueva casa digital (video institucional)</td></tr>
+    <tr><td><b>Lun 20</b></td><td>🎠 Carrusel ×4</td><td>"¿Sabías que…?" — el secreto del TiO₂</td></tr>
+    <tr><td><b>Mié 22</b></td><td>🖼 Post</td><td>Materia prima de la semana: Dióxido de Titanio</td></tr>
+    <tr><td><b>Vie 24</b></td><td>🖼 Post</td><td>Sectores: Pintura arquitectónica</td></tr>
+    <tr><td><b>Lun 27</b></td><td>🖼 Post</td><td>"Tu producción nunca se detiene"</td></tr>
+    <tr><td><b>Mié 29</b></td><td>🖼 Post</td><td>Materia prima de la semana: Resinas</td></tr>
+    <tr><td>Mar y Jue</td><td>📱 Stories</td><td>Videos verticales + sticker de enlace + encuesta</td></tr>
+  </table></div>
+  <div class="cap"><span class="lbl">Hashtags base</span>#MateriasPrimas #IndustriaColombiana #Pinturas #Recubrimientos #Plásticos #Cúcuta #Colombia #PymesColombia #FabricantesDePintura</div>
+  <div class="cap"><span class="lbl">Consejos</span>⏰ 7:30–9:00 am o 6:00–8:00 pm · 💬 Responder todo el mismo día · 📍 Etiquetar Cúcuta · 🔗 Bio: grupoinsamco.com/links</div>
+</div>
+
+<!-- PLANCHAS V2 -->
+<div class="pagina dark2" data-n="08b · Serie Noche y Oro" style="background:#0E1C33;">
+  <div class="kicker">Capítulo 08</div>
+  <h2><span class="n">08b ·</span> La serie "Noche y Oro" — posts v2</h2>
+  <p>Las piezas de la campaña en su versión premium, listas para exportar y publicar.</p>
+  <div style="display:grid; gap:14px; margin-top:14px;">
+    <div class="imgcard"><img src="media/plancha-1.png"></div>
+    <div class="imgcard"><img src="media/plancha-2.png"></div>
+    <div class="imgcard"><img src="media/plancha-3.png"></div>
+  </div>
+</div>
+
+<!-- POSTS V1 -->
+<div class="pagina" data-n="08c · Piezas 1080×1080">
+  <div class="kicker">Capítulo 08</div>
+  <h2><span class="n">08c ·</span> Las piezas listas para publicar (con su caption en el PDF)</h2>
+  <div class="grid3">
+    <div class="imgcard"><img src="media/post-02a-carrusel-sabias.png"></div>
+    <div class="imgcard"><img src="media/post-02b-carrusel-sabias.png"></div>
+    <div class="imgcard"><img src="media/post-02c-carrusel-sabias.png"></div>
+    <div class="imgcard"><img src="media/post-02d-carrusel-sabias.png"></div>
+    <div class="imgcard"><img src="media/post-01-titanio.png"></div>
+    <div class="imgcard"><img src="media/post-03-sector-arquitectonico.png"></div>
+    <div class="imgcard"><img src="media/post-04-aliado-suministro.png"></div>
+    <div class="imgcard"><img src="media/post-05-resinas.png"></div>
+  </div>
+  <p class="note">Los captions completos, listos para copiar y pegar, están en el PDF de EL BOOK y en el calendario del Drive.</p>
+</div>
+
+<!-- 10 EXCHANGE -->
+<div class="pagina dark2" data-n="10 · Insamco Exchange">
+  <div class="kicker">Capítulo 10 ⭐</div>
+  <h2><span class="n">10 ·</span> Insamco Exchange — la tarjeta de presentación digital</h2>
+  <p>Un conversor de divisas hecho a la medida de la <b>zona fronteriza</b>: conectado con los cambios del día — <b>incluidas las tasas de frontera</b> — y diseñado para vivir en el teléfono de cada cliente.</p>
+  <div class="cap"><span class="lbl">Por qué es una jugada maestra</span>
+  💱 <b>Tasas del día</b>: mercado + frontera, siempre actualizadas<br>
+  📲 <b>Se instala como app</b> desde el navegador — sin tiendas ni descargas<br>
+  🌱 <b>Ecológica y permanente</b>: la tarjeta que nunca se bota ni se pierde<br>
+  🤝 <b>Cada consulta de tasa = un recuerdo de Insamco</b> en el bolsillo del cliente</div>
+  <div class="cap"><span class="lbl">Las dos versiones</span>
+  <b>Versión Sergio (administrador):</b> puede ajustar su propia tasa del día para sus operaciones.<br>
+  <b>Versión clientes:</b> consulta las tasas de mercado y de frontera, lista para compartir.</div>
+  <h3>Las portadas de la app</h3>
+  <div class="grid3">
+    <div><div class="imgcard"><img src="media/exchange-sergio.jpg"></div><p class="note" style="color:#8FA6BF;">Versión Sergio — el administrador</p></div>
+    <div><div class="imgcard"><img src="media/exchange-mei.jpg"></div><p class="note" style="color:#8FA6BF;">Avatar Mei — atención al cliente</p></div>
+    <div><div class="imgcard"><img src="media/exchange-cle.jpg"></div><p class="note" style="color:#8FA6BF;">Avatar Cle — la casa BHG</p></div>
+    <div><div class="imgcard"><img src="media/exchange-tarjeta.jpg"></div><p class="note" style="color:#8FA6BF;">Portada conversor</p></div>
+    <div><div class="imgcard"><img src="media/exchange-holograma.jpg"></div><p class="note" style="color:#8FA6BF;">El holograma — la app en tus manos</p></div>
+    <div><div class="imgcard"><img src="media/exchange-portada2.jpg"></div><p class="note" style="color:#8FA6BF;">Portada alterna</p></div>
+  </div>
+  <div style="text-align:center; margin-top:26px;">
+    <img src="media/qr-exchange.png" style="width:min(300px,70vw); margin:0 auto; border-radius:10px;">
+    <p style="margin-top:14px;"><b style="color:#fff;">Exhíbelo. Compártelo. Escanéalo.</b><br>Mostrador de la bodega · firma del correo · WhatsApp</p>
+    <a class="btn" href="https://grupoinsamcoexchange.netlify.app">Abrir el conversor →</a>
+  </div>
+</div>
+
+<!-- 11 PAGOS -->
+<div class="pagina" data-n="11 · Pagos en línea">
+  <div class="kicker">Capítulo 11</div>
+  <h2><span class="n">11 ·</span> Cobrar en línea: la guía</h2>
+  <p>Para un negocio B2B de cotización <b>no hace falta una tienda online</b>: lo ideal son <b>links de pago</b> — se cierra la cotización por WhatsApp/correo y el cliente paga con tarjeta, PSE, Nequi o Bancolombia.</p>
+  <div class="tablewrap"><table>
+    <tr><th>Pasarela</th><th>De quién es</th><th>Fuerte en</th><th>Comisión aprox.*</th></tr>
+    <tr><td><b>Wompi ⭐</b></td><td>Bancolombia</td><td>Links, botón web, PSE, Nequi</td><td>~2.65% + IVA</td></tr>
+    <tr><td><b>Bold</b></td><td>Independiente</td><td>Links + datáfonos</td><td>~1.99–2.99% + IVA</td></tr>
+    <tr><td>ePayco</td><td>Davivienda</td><td>Checkout web</td><td>~2.99% + IVA + fijo</td></tr>
+    <tr><td>Mercado Pago</td><td>Mercado Libre</td><td>Cero papeleo</td><td>~3.29% + IVA</td></tr>
+    <tr><td>PayU</td><td>Global</td><td>Integraciones grandes</td><td>~3.49% + IVA + fijo</td></tr>
+  </table></div>
+  <p class="note">*Referencia julio 2026 — confirmar antes de firmar.</p>
+  <div class="cap"><span class="lbl">Recomendación BHG</span><b>1º Wompi</b> (si son Bancolombia) · <b>2º Bold</b> si quieren datáfono · <b>Fase 2:</b> botón "Pagar" conectado al panel.</div>
+  <div class="cap"><span class="lbl">Requisitos</span>RUT · Cámara de Comercio (&lt;90 días) · cédula del representante · cuenta bancaria empresarial · correo y celular.</div>
+</div>
+
+<!-- 12 ENLACES -->
+<div class="pagina" data-n="12 · Enlaces">
+  <div class="kicker">Capítulo 12</div>
+  <h2><span class="n">12 ·</span> Todo el proyecto, con su enlace</h2>
+  <div class="tablewrap"><table>
+    <tr><th colspan="2">🌐 En vivo</th></tr>
+    <tr><td><b>Oficial</b></td><td><a href="https://grupoinsamco.com">grupoinsamco.com</a> · <a href="https://grupoinsamco.com/admin">/admin</a> · <a href="https://grupoinsamco.com/links">/links</a></td></tr>
+    <tr><td><b>Exchange</b></td><td><a href="https://grupoinsamcoexchange.netlify.app">grupoinsamcoexchange.netlify.app</a></td></tr>
+    <tr><th colspan="2">📦 Código y respaldo</th></tr>
+    <tr><td><b>Repositorio</b></td><td>github.com/glendapalai-netizen/insamco-web (web + marca + docs)</td></tr>
+    <tr><th colspan="2">📄 Descargas</th></tr>
+    <tr><td><b>Catálogo PDF</b></td><td><a href="https://grupoinsamco.com/media/Catalogo-Materias-Primas-Insamco.pdf">catálogo oficial</a></td></tr>
+    <tr><td><b>Activos</b></td><td>Carpeta Drive "ENTREGA SERGIO — Book + Activos" (logos, videos, brand kit)</td></tr>
+  </table></div>
+  <div class="cap"><span class="lbl">Cuentas</span>GitHub: glendapalai-netizen · Netlify: Glenda (Pro) · Squarespace: Glenda (admin invitada) · IA Tyti: Google AI Studio.</div>
+</div>
+
+<!-- 13 ESTADO -->
+<div class="pagina" data-n="13 · Estado de la entrega">
+  <div class="kicker">Capítulo 13</div>
+  <h2><span class="n">13 ·</span> Qué está vivo, qué falta, qué sigue</h2>
+  <h3>✅ En vivo</h3>
+  <p>Web con SSL · dominio y correo intactos · catálogo · panel /admin · Exchange enlazado con QR · WhatsApp · marcas aliadas · testimonios reales · /links.</p>
+  <h3>✅ Cumplido por Sergio (16-jul)</h3>
+  <ul><li>Logos de marcas aliadas → publicados</li><li>4 testimonios reales → publicados</li></ul>
+  <h3>⏳ Pendientes de Sergio</h3>
+  <ul>
+    <li>Decidir pasarela de pagos (Wompi recomendada)</li>
+    <li>Cambiar la bio de Instagram a grupoinsamco.com/links</li>
+    <li>Exhibir el QR del Exchange</li>
+  </ul>
+  <h3>🚀 Fase 2 — cuando Sergio dé luz verde</h3>
+  <ul>
+    <li>Correo automático de confirmación de cotizaciones</li>
+    <li>Pagos en línea (Wompi: tarjetas + PSE)</li>
+    <li><b>Gestión mensual de redes por BHG Estudio</b> — calendario, piezas y publicación, todos los meses</li>
+  </ul>
+</div>
+
+</div>
+
+<footer>
+  <img src="media/dorado-5.png" style="width:130px; margin:0 auto 14px;">
+  EL BOOK · Grupo Insamco S.A.S. · Julio 2026<br>
+  Hecho con método <a href="https://bhgve.com">BHG Estudio</a> · Autoría Cle&amp;Fábula
+</footer>
+
+</body>
+</html>
