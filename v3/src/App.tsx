@@ -5,6 +5,7 @@ import { Footer } from './components/layout/Footer';
 import { TabDock, TabId } from './components/layout/TabDock';
 import { Hero } from './components/sections/Hero';
 import { Benefits } from './components/sections/Benefits';
+import { Brands } from './components/sections/Brands';
 import { Services } from './components/sections/Services';
 import { Products } from './components/sections/Products';
 import { Applications } from './components/sections/Applications';
@@ -70,6 +71,7 @@ function Home() {
           <>
             <Hero />
             <Benefits />
+            <Brands />
           </>
         )}
         {mostrar(['productos']) && (

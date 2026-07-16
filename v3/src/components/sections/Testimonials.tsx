@@ -18,31 +18,31 @@ export function Testimonials() {
 
   const testimonials = [
     {
-      quote: "El abastecimiento constante de resinas y dióxido de titanio ha sido vital. Su stock recurrente y excelente logística nos garantizó una continuidad operativa impecable, sin un solo día de paro en nuestra planta de producción.",
-      author: "Ing. Carlos Mendoza",
-      role: "Director de Operaciones",
-      company: "PlastAndina S.A.",
+      quote: "Siempre han sido un aliado estratégico en el desarrollo de nuevas líneas de productos y suministro de materias primas de excelente calidad.",
+      author: "Noralba Contreras",
+      role: "Colombia",
+      company: "Pintutécnicas",
       icon: <Factory className="w-8 h-8 text-insamco-blue" />
     },
     {
-      quote: "Más que un proveedor, encontramos un verdadero aliado estratégico en Grupo Insamco. El acompañamiento técnico nos permitió optimizar el uso de cargas minerales, mejorando la calidad final de nuestras pinturas y reduciendo costos.",
-      author: "Ana Lucía Reyes",
-      role: "Gerente de I+D",
-      company: "ColorTech Industrias",
+      quote: "Profesionalismo, experiencia y compromiso por brindar las mejores materias primas y la mejor logística de entrega hasta Barquisimeto, Venezuela.",
+      author: "Jorge Barreto",
+      role: "Venezuela",
+      company: "Suministros Barreto",
       icon: <Building2 className="w-8 h-8 text-insamco-blue" />
     },
     {
-      quote: "Su capacidad logística y eficiencia en importación nos resolvió un problema crítico de desabastecimiento. Trabajar con Grupo Insamco significa transparencia, solidez y la tranquilidad de tener la materia prima siempre a tiempo.",
-      author: "Roberto Salazar",
-      role: "Gerente General",
-      company: "Recubrimientos Especiales CA",
+      quote: "Nos han apoyado y acompañado de principio a fin.",
+      author: "Dixon García",
+      role: "Venezuela",
+      company: "Pinturas Vinilflex",
       icon: <Component className="w-8 h-8 text-insamco-blue" />
     },
     {
-      quote: "La asesoría especializada para el desarrollo de nuevos productos nos ha dado una ventaja competitiva enorme en el mercado de plásticos. Contar con un aliado que entiende nuestra formulación es invaluable.",
-      author: "Diana Castellanos",
-      role: "Jefa de Compras",
-      company: "Polímeros Avanzados",
+      quote: "Seriedad y compromiso con cada entrega.",
+      author: "Manuel Paredes",
+      role: "Colombia",
+      company: "Logística Paredes",
       icon: <Factory className="w-8 h-8 text-insamco-blue" />
     }
   ];
