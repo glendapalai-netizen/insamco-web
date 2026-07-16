@@ -177,6 +177,15 @@ function Dashboard({ token, onLogout }: { token: string; onLogout: () => void })
             <p className="text-slate-400 text-xs">Cotizaciones y fichas técnicas</p>
           </div>
           <div className="flex items-center gap-2">
+            <a
+              href="/book/"
+              target="_blank"
+              rel="noreferrer"
+              title="EL BOOK de la marca"
+              className="inline-flex items-center gap-2 bg-insamco-gold text-insamco-blue font-bold rounded-sm px-3 py-2 text-sm hover:brightness-110 transition"
+            >
+              📖 <span className="hidden sm:inline">EL BOOK</span>
+            </a>
             <button
               onClick={cargar}
               title="Actualizar"
